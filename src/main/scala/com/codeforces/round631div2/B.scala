@@ -7,7 +7,7 @@ package com.codeforces.round631div2
 object B extends App {
 
   private def restore(as: List[Int]): List[(Int, Int)] = {
-    val n = as.length
+    val n  = as.length
     val ma = as.max
 
     List(ma, n - ma)
@@ -31,7 +31,7 @@ object B extends App {
 
   val input: List[List[Int]] = (0 until t)
     .foldLeft(List.empty[List[Int]]) { (input, _) =>
-      val n = scala.io.StdIn.readInt()
+      val n  = scala.io.StdIn.readInt()
       val as = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
 
       as :: input

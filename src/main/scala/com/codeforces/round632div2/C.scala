@@ -8,6 +8,7 @@ package com.codeforces.round632div2
 object C extends App {
 
   implicit class SetOps[A](val set: Set[A]) extends AnyVal {
+
     def fillWhile(xs: List[A]): (List[A], Set[A]) = xs match {
       case Nil => (Nil, set)
       case x :: rs =>
@@ -18,10 +19,7 @@ object C extends App {
   private def howGood(as: List[Int]): Long = {
 
     @scala.annotation.tailrec
-    def go(ps: List[Long],
-           qs: List[Long],
-           s: Set[Long] = Set(0L),
-           acc: Long = 0L): Long = ps match {
+    def go(ps: List[Long], qs: List[Long], s: Set[Long] = Set(0L), acc: Long = 0L): Long = ps match {
       case Nil => acc
       case x :: xs =>
         val (nqs, ns) = s.fillWhile(qs)
@@ -33,7 +31,7 @@ object C extends App {
     go(ps, ps.tail)
   }
 
-  val n = scala.io.StdIn.readInt()
+  val n  = scala.io.StdIn.readInt()
   val as = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
 
   println(howGood(as))

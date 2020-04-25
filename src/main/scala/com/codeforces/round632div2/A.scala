@@ -38,7 +38,5 @@ object A extends App {
 
   val answers = sizes.map(colorize)
 
-  answers.foreach { answer =>
-    println(answer.map(_.mkString("")).mkString("\n"))
-  }
+  answers.foreach(answer => println(answer.map(_.mkString("")).mkString("\n")))
 }

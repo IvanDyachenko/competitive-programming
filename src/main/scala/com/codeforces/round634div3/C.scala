@@ -9,7 +9,7 @@ object C extends App {
   val t = scala.io.StdIn.readInt()
 
   (0 until t).foreach { _ =>
-    val n = scala.io.StdIn.readInt()
+    val n      = scala.io.StdIn.readInt()
     val skills = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
 
     val l :: rs =

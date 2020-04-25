@@ -13,7 +13,7 @@ object B extends App {
     val Savings(x, as) = s
 
     val (ps, rs) = as.sorted.span(_ < x)
-    val rl = rs.length
+    val rl       = rs.length
 
     val overage: Long = rs.foldLeft(0L)(_ + _ - x)
 
@@ -30,7 +30,7 @@ object B extends App {
   val input = (0 until t)
     .foldLeft(List.empty[Savings]) { (acc, _) =>
       val Array(n, x) = scala.io.StdIn.readLine().split(" ").map(_.toInt)
-      val as = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
+      val as          = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
 
       Savings(x, as) :: acc
     }

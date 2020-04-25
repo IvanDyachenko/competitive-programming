@@ -9,7 +9,7 @@ object B extends App {
 
   (0 until t).foreach { _ =>
     val Array(n, _, b) = scala.io.StdIn.readLine().split(" ").map(_.toInt)
-    val s = (0 until n).map(i => ('a' + i % b).toChar).mkString("")
+    val s              = (0 until n).map(i => ('a' + i % b).toChar).mkString("")
 
     println(s)
   }

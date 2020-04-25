@@ -8,7 +8,7 @@ object A extends App {
   class Rank private (val x: Int, val as: List[Int])
 
   object Rank {
-    def apply(x: Int, as: List[Int]): Rank = new Rank(x, as.distinct.sorted)
+    def apply(x: Int, as: List[Int]): Rank            = new Rank(x, as.distinct.sorted)
     def unapply(rank: Rank): Option[(Int, List[Int])] = Some(rank.x, rank.as)
   }
 
@@ -30,7 +30,7 @@ object A extends App {
     .foldLeft(List.empty[Rank]) {
       case (rs, _) =>
         val Array(_, x) = scala.io.StdIn.readLine().split(" ").map(_.toInt)
-        val as = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
+        val as          = scala.io.StdIn.readLine().split(" ").map(_.toInt).toList
 
         Rank(x, as) :: rs
     }

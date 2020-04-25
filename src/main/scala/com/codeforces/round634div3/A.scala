@@ -8,7 +8,7 @@ object A extends App {
   val t = scala.io.StdIn.readInt()
 
   (0 until t).foreach { _ =>
-    val n = scala.io.StdIn.readInt()
+    val n   = scala.io.StdIn.readInt()
     val ans = (n - 1) / 2
 
     println(ans)

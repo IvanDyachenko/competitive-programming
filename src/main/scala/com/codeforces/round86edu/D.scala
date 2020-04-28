@@ -9,15 +9,15 @@ object D extends App {
   val mn          = scala.io.StdIn.readLine().split(" ").map(_.toInt).sorted(Ordering.Int.reverse)
   val ck          = scala.io.StdIn.readLine().split(" ").map(_.toInt)
 
-  val ans = ck.reverse.zipWithIndex
-    .foldLeft((mn, 0d, 0)) {
-      case ((mn, g, b), (c, i)) =>
-        val mm = mn.dropWhile(_ >= (k - i))
-        val t  = g + mn.length - mm.length
- 
-        (mm, t, b.max(math.ceil(t / c.toInt).toInt))
+  val (ans, _, _) = ck.reverse.zipWithIndex
+    .foldLeft((0, 0, 0d)) {
+      case ((b, j, g), (c, i)) =>
+        val u = mn.indexWhere(_ < k - i, j)
+        val t = if (u < 0) n else u
+        val h = g + t - j
+
+        (b max math.ceil(h / c).toInt, t, h)
     }
-    ._3
 
   val kv = collection.mutable.Map.empty[Int, List[Int]]
 
@@ -30,7 +30,7 @@ object D extends App {
   }
 
   println(ans)
-
+ 
   kv.foreach {
     case (_, vs) =>
       println(s"${vs.length} ${vs.mkString(" ")}")

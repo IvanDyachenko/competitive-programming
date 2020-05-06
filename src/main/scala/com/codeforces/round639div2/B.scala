@@ -1,5 +1,7 @@
 package com.codeforces.round639div2
 
+import _root_.scala.collection.immutable.Range.Long
+
 /**
   * B. Card Constructions
   * https://codeforces.com/contest/1345/problem/B
@@ -7,13 +9,13 @@ package com.codeforces.round639div2
 object B extends App {
   val t = scala.io.StdIn.readInt()
 
-  private def height(n: Int): Int =
+  private def height(n: Long): Int =
     (math.sqrt(24 * n + 1) - 1).toInt / 6
 
   private def cards(h: Int): Int =
     h * (3 * h + 1) / 2
 
-  private def solve(n: Int, count: Int = 0): Long =
+  private def solve(n: Long, count: Int = 0): Int =
     if (n == 0) count
     else {
       val h = height(n)
@@ -23,7 +25,7 @@ object B extends App {
     }
 
   (0 until t).foreach { _ =>
-    val n = scala.io.StdIn.readInt()
+    val n = scala.io.StdIn.readLong()
 
     val ans = solve(n)
 

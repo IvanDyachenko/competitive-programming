@@ -1,7 +1,5 @@
 package com.codeforces.round639div2
 
-import _root_.scala.collection.immutable.Range.Long
-
 /**
   * B. Card Constructions
   * https://codeforces.com/contest/1345/problem/B

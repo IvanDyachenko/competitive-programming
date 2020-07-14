@@ -5,26 +5,29 @@ package com.codeforces.round85edu
   * https://codeforces.com/contest/1334/problem/C
   */
 object C extends App {
-  case class Monster(health: Int, explosion: Int)
+  import scala.io.StdIn._
 
-  private def bullets(ms: List[Monster]): Int = ???
+  case class Monster(h: Long, e: Long)
 
-  val t = scala.io.StdIn.readInt()
+  val t = readInt()
 
-  val input = (0 until t).foldLeft(List.empty[List[Monster]]) { (in, _) =>
-    val n = scala.io.StdIn.readInt()
+  (0 until t).foreach { _ =>
+    val n = readInt()
+    val mn = (0 until n).foldLeft(Array.ofDim[Monster](n)) { (ms, i) =>
+      val Array(h, e) = readLine().split(" ").map(_.toLong)
+      ms(i) = Monster(h, e)
+      ms
+    }
 
-    val ms = (0 until n)
-      .foldLeft(List.empty[Monster]) { (ms, _) =>
-        val Array(h, e) = scala.io.StdIn.readLine().split(" ").map(_.toInt)
-        Monster(h, e) :: ms
-      }
-      .reverse
+    val (bs, b) = mn.indices.foldLeft((0L, Long.MaxValue)) {
+      case ((bs, b), i) =>
+        val j = (i + 1) % n
 
-    ms :: in
+        (bs + (mn(j).h - mn(i).e).max(0L), b.min(mn(j).h min mn(i).e))
+    }
+
+    val ans = bs + b
+
+    println(ans)
   }
-
-  val output = input.map(bullets)
-
-  println(output.mkString("\n"))
 }

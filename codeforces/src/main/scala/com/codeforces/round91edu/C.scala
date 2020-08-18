@@ -1,6 +1,5 @@
 package com.codeforces.round91edu
 
-
 /**
   * C. Create The Teams
   * https://codeforces.com/contest/1380/problem/C

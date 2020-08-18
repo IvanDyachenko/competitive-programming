@@ -33,7 +33,7 @@ object C extends App {
       .foldLeft((0L, 0L, HashMap(0L -> 1))) { // prefix_sum(0) = 0  -->  counts(0) = 1
         case ((answer, prefix, counts), a) =>
           val key = prefix + a
-          val add = counts.getOrElse(key, 0) // 
+          val add = counts.getOrElse(key, 0) //
 
           (answer + add, key, counts + (key -> (add + 1)))
       }

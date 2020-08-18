@@ -30,7 +30,7 @@ object D extends App {
   }
 
   println(ans)
- 
+
   kv.foreach {
     case (_, vs) =>
       println(s"${vs.length} ${vs.mkString(" ")}")

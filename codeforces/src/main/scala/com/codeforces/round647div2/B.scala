@@ -13,8 +13,7 @@ object B extends App {
     val t  = sn.reduce(_ ^ _)
     val m  = 1 << (1 + (math.log10(sn.max) / math.log10(2)).toInt)
 
-    val k = (if (t == 0) (1 to m) else (t to t))
-      .view
+    val k = (if (t == 0) (1 to m) else (t to t)).view
       .collectFirst { case k if sn.diff(sn.map(_ ^ k)).isEmpty => k }
       .getOrElse(-1)
 

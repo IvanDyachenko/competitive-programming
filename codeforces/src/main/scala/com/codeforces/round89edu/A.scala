@@ -11,16 +11,16 @@ object A extends App {
     val Array(a, b) = scala.io.StdIn.readLine().split(" ").map(_.toInt).sorted
 
     /**
-      * a = 2 * t1 + t2 
+      * a = 2 * t1 + t2
       * b = t1 + 2 * t2
-      * 
+      *
       * ans = t1 + t2
       * a <= ans
       * b <= ans
-      * 
+      *
       * a + b = 3 * t1 + 3 * t2
       * t1 + t2 = (a + b) / 3
-      * 
+      *
       * ans = min(a, b, (a + b) / 3)
       */
     val ans = a min b min ((a + b) / 3)

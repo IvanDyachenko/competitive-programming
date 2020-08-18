@@ -1,6 +1,6 @@
 package com.codeforces.round638div2
 
-/** 
+/**
   * B. Phoenix and Beauty
   * https://codeforces.com/contest/1348/problem/B
   */

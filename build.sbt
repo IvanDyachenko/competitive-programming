@@ -7,8 +7,7 @@ lazy val root = (project in file("."))
   .settings(
     skip in publish := true,
     scalafmtOnCompile := true,
-    crossScalaVersions := Nil,
-    dependencies
+    crossScalaVersions := Nil
   )
 
 lazy val atcoder = (project in file("atcoder"))
@@ -18,13 +17,15 @@ lazy val atcoder = (project in file("atcoder"))
 
 lazy val codeforces = (project in file("codeforces"))
   .settings(
-    crossScalaVersions := List(scala2_12)
+    crossScalaVersions := List(scala2_12),
+    commonDependencies
   )
 
-lazy val dependencies =
+lazy val commonDependencies =
   libraryDependencies ++= List(
     "org.scalactic" %% "scalactic" % scalacticVersion % "test",
-    "org.scalatest" %% "scalatest" % scalatestVersion % "test"
+    "org.scalatest" %% "scalatest" % scalatestVersion % "test",
+    "org.scalatest" %% "scalatest-flatspec" % scalatestVersion % "test"
   )
 
 lazy val scala2_12 = "2.12.8"

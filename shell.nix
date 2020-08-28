@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation rec {
       texlive-custom = pkgs.texlive.combine {
         inherit (pkgs.texlive) scheme-basic
           # Needed on top of scheme-basic
-          ulem capt-of wrapfig metafont;
+          latexmk ulem capt-of wrapfig metafont;
       };
     in
       [

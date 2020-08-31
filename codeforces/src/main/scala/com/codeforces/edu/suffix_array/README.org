@@ -23,8 +23,8 @@
    | bba    |
 
    This sequence of suffixes is called the *suffix array*. How will we store it? If you store it as
-   strings, then it will occupy $\mathcal{O}(n^2)$ memory. To keep it smaller, let's notice that the suffix can
-   be identified by the index of the first character. In our example, suffixes will have these
+   strings, then it will occupy $\mathcal{O}(n^2)$ memory. To keep it smaller, let's notice that the
+   suffix can be identified by the index of the first character. In our example, suffixes will have these
    numbers:
    | *a* | *b* | *a* | *b* | *b* | *a* |   |
    |-----+-----+-----+-----+-----+-----+---|
@@ -169,4 +169,32 @@
 
    The time complexity this algorithm will be $\mathcall{O}(n \log^2 n)$, because on at each of the
    $\log n$ iterations we do the sorting in $\mathcall{O}(n \log n)$ time.
-   
+
+** Improved algorithm
+*** Using Radix sort
+    At the last step, we got the algorithm working in the time $\mathcall{O}(n \log^2 n)$. To make
+    the algorithm faster, we need to get rid of the sorting in $\mathcall{O}(n \log n)$ on each
+    transition. Let's notice that we need to sort the pairs of numbers $(a_i, b_i)$, with each of
+    the numbers $a_i$ and $b_i$ being integers in the range from $0$ to $n - 1$. We can use the
+    *radix sort* to sort these pairs.
+
+*** Radix sort
+    Radix sort works as follows. We sort the pairs by the second element, and then sort them again
+    using stable sorting algorithm by the first element. Since each time the key is an integer from
+    $0$ to $n - 1$, in both cases we can use *counting sort*.
+
+*** Counting sort
+    Counting sort works as follows. We will calculate how many times each element occurs, after that
+    we create the buckets of the required size for each element, and arrange the elements into buckets.
+
+*** Conclusion
+    Thus, each sort will work in linear time, and the total time of the algorithm will be
+    $\mathcall{O}(n \log n)$. Thus, each sort will work in linear time, and the total time of the
+    algorithm will be $\mathcall{O}(n \log n)$.    
+
+*** Additional optimizations
+    To make the algorithm even a little faster and easier, the following fact can be noted. At
+    iteration $k$ we get sorted strings of length $2^k$. If we add another $2^k$ characters to the
+    beginning of each string, we get strings of length $2^{k + 1}$, sorted by right halves. After
+    that, it will be enough to do only the second phase of radix sort, sorting the pairs by the
+    first element.

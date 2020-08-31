@@ -1,4 +1,4 @@
-% Created 2020-08-31 Mon 16:28
+% Created 2020-08-31 Mon 20:38
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,10 +31,10 @@
 
 
 \section{Suffix array. Base algorithm}
-\label{sec:org44b94b2}
+\label{sec:org9db0cea}
 
 \subsection{What is a suffix array?}
-\label{sec:org2da6791}
+\label{sec:org9aa859c}
 Consider a string \(s\):
 \begin{center}
 \begin{tabular}{l}
@@ -55,8 +55,8 @@ bba\\
 \end{center}
 
 This sequence of suffixes is called the \textbf{suffix array}. How will we store it? If you store it as
-strings, then it will occupy \(\mathcal{O}(n^2)\) memory. To keep it smaller, let's notice that the suffix can
-be identified by the index of the first character. In our example, suffixes will have these
+strings, then it will occupy \(\mathcal{O}(n^2)\) memory. To keep it smaller, let's notice that the
+suffix can be identified by the index of the first character. In our example, suffixes will have these
 numbers:
 \begin{center}
 \begin{tabular}{rrrrrrr}
@@ -156,7 +156,7 @@ the string length is 7, so we need to add one character:
 \end{center}
 
 \subsection{Algorithm idea}
-\label{sec:org84b1a6d}
+\label{sec:orgb3bcb1d}
 We will build this table by columns, each time increasing the number of columns twice. That is,
 first we construct the first column, then the first two, then four, and so on. In other words, we
 divide the algorithm into \(\log n\) iterations, and on the iteration \(k\) we construct an array
@@ -229,7 +229,7 @@ string \(abab\), and the pair \((2, 3)\) for the string \(abba\). Now compare th
 \((2, 2) < (2, 3)\), which means that \(abab < abba\).
 
 \subsection{Algorithm}
-\label{sec:orgb47f146}
+\label{sec:org3e46588}
 Thus, we get the following algorithm. First, we form strings of one character and sort them by
 any sort algorithm in \(\mathcall{O}(n \log n)\). Next, \(\log n\) times we make the transition from
 \(k\) to \(k + 1\). Each transition is done like this: take sorted strings of length \(2^k\), assign
@@ -239,4 +239,39 @@ equivalence classes of its halves, sort these pairs and get a sorted order for a
 
 The time complexity this algorithm will be \(\mathcall{O}(n \log^2 n)\), because on at each of the
 \(\log n\) iterations we do the sorting in \(\mathcall{O}(n \log n)\) time.
+
+\subsection{Improved algorithm}
+\label{sec:org8bbc231}
+\subsubsection{Using Radix sort}
+\label{sec:org12992ee}
+At the last step, we got the algorithm working in the time \(\mathcall{O}(n \log^2 n)\). To make
+the algorithm faster, we need to get rid of the sorting in \(\mathcall{O}(n \log n)\) on each
+transition. Let's notice that we need to sort the pairs of numbers \((a_i, b_i)\), with each of
+the numbers \(a_i\) and \(b_i\) being integers in the range from \(0\) to \(n - 1\). We can use the
+\textbf{radix sort} to sort these pairs.
+
+\subsubsection{Radix sort}
+\label{sec:orgb717c36}
+Radix sort works as follows. We sort the pairs by the second element, and then sort them again
+using stable sorting algorithm by the first element. Since each time the key is an integer from
+\(0\) to \(n - 1\), in both cases we can use \textbf{counting sort}.
+
+\subsubsection{Counting sort}
+\label{sec:org9faf43d}
+Counting sort works as follows. We will calculate how many times each element occurs, after that
+we create the buckets of the required size for each element, and arrange the elements into buckets.
+
+\subsubsection{Conclusion}
+\label{sec:org0016db4}
+Thus, each sort will work in linear time, and the total time of the algorithm will be
+\(\mathcall{O}(n \log n)\). Thus, each sort will work in linear time, and the total time of the
+algorithm will be \(\mathcall{O}(n \log n)\).    
+
+\subsubsection{Additional optimizations}
+\label{sec:org3f9b786}
+To make the algorithm even a little faster and easier, the following fact can be noted. At
+iteration \(k\) we get sorted strings of length \(2^k\). If we add another \(2^k\) characters to the
+beginning of each string, we get strings of length \(2^{k + 1}\), sorted by right halves. After
+that, it will be enough to do only the second phase of radix sort, sorting the pairs by the
+first element.
 \end{document}

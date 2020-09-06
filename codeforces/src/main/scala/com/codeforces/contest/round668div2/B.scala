@@ -14,10 +14,9 @@ object B extends App {
     val an = readLine().split(" ").map(_.toInt)
 
     val ans = an
-      .foldLeft((0L, 0L)) {
-        case ((damper, cost), a) =>
-          if (a < 0) ((damper + a) max 0, cost + (damper + a).min(0))
-          else (damper + a, cost)
+      .foldRight((0L, 0L)) {
+        case (el, (subSum, partSum)) =>
+          (subSum max (partSum + el), partSum + el)
       }
       ._1
 

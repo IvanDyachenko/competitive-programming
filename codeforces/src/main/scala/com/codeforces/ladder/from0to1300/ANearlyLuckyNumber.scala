@@ -7,7 +7,7 @@ package com.codeforces.ladder.from0to1300
 object ANearlyLuckyNumber extends App {
   import scala.io.StdIn._
 
-  def isLuckyDigit(digit: Char): Boolean = digit == '4' || digit == '7'
+  def isLuckyDigit(digit: Char): Boolean     = digit == '4' || digit == '7'
   def isLuckyNumber(number: String): Boolean = number.forall(isLuckyDigit)
   def isNearlyLuckyNumber(number: String): Boolean =
     isLuckyNumber(number.count(isLuckyDigit).toString)

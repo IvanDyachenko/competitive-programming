@@ -17,10 +17,9 @@ object D extends App {
     t =>
       skills.foldLeft(0) {
         case (ballons, (ti, yi, zi)) =>
-          val cycle     = ti * zi + yi
-          val quotient  = t / cycle
-          val remainder = ((t - quotient * cycle) / ti) min zi
-          val count     = quotient * zi + remainder
+          val cycle                 = ti * zi + yi
+          val (quotient, remainder) = (t / cycle, (t % cycle / ti) min zi)
+          val count                 = quotient * zi + remainder
 
           ballons + count
       } >= m
@@ -49,10 +48,9 @@ object D extends App {
   println(ans)
   skills.foldLeft(m) {
     case (m, (ti, yi, zi)) =>
-      val cycle     = ti * zi + yi
-      val quotient  = ans / cycle
-      val remainder = ((ans - quotient * cycle) / ti) min zi
-      val count     = (quotient * zi + remainder) min m
+      val cycle                 = ti * zi + yi
+      val (quotient, remainder) = (ans / cycle, (ans % cycle / ti) min zi)
+      val count                 = (quotient * zi + remainder) min m
 
       print(s"$count ")
 

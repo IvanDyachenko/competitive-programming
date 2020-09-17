@@ -78,12 +78,39 @@ object A extends App {
     go(0, ps, cs)
   }
 
-  import scala.io.StdIn._
+  import InOut._
 
-  val s = readLine()
+  val s = nextLine()
 
   val (ans1, ans2) = lcp(s)
 
-  println(ans1.mkString(" "))
-  println(ans2.mkString(" "))
+  out.println(ans1.mkString(" "))
+  out.println(ans2.mkString(" "))
+  out.flush()
+
+  final object InOut {
+    import java.util.Scanner
+
+    val in  = new java.io.BufferedReader(new java.io.InputStreamReader(System.in))
+    val out = new java.io.PrintWriter(System.out, false)
+
+    def nextInt()        = Integer.parseInt(nextToken())
+    def nextInts(n: Int) = Array.fill(n)(nextInt())
+
+    def nextLong()        = java.lang.Long.parseLong(nextToken())
+    def nextLongs(n: Int) = Array.fill(n)(nextLong())
+
+    def nextBig()        = BigInt(nextToken())
+    def nextBigs(n: Int) = Array.fill(n)(nextBig())
+
+    def nextLine() = in.readLine()
+
+    private[this] var tokenizer: java.util.StringTokenizer = _
+
+    def nextToken(): String = {
+      while (tokenizer == null || !tokenizer.hasMoreTokens())
+        tokenizer = new java.util.StringTokenizer(in.readLine())
+      tokenizer.nextToken()
+    }
+  }
 }

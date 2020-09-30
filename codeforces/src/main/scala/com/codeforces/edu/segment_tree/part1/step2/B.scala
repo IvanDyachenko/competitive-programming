@@ -1,22 +1,22 @@
-package com.codeforces.edu.segment_tree.step2
+package com.codeforces.edu.segment_tree.part1.step2
 
 /**
-  * A. Segment with the Maximum Sum
-  * https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/A
+  * B. K-th one
+  * https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/B
   */
-object A extends App {
+object B extends App {
   import scala.reflect.ClassTag
 
   abstract class SegmentTree[A] private (private val z: A)(private val op: (A, A) => A) {
-    def update(idx: Int, elem: A): Unit
-    def fold(from: Int, until: Int): A
+    def update(idx: Int, f: A => A): Unit
+    def indexWhere[B](b: B)(op: (B, A) => (B, Boolean)): Int
   }
 
   object SegmentTree {
-    def apply[A: ClassTag](as: A*)(z: A)(op: (A, A) => A) = new SegmentTree(z)(op) {
+    def apply[A: ClassTag](as: A*)(z: A)(op: (A, A) => A): SegmentTree[A] = new SegmentTree(z)(op) {
       private[this] val size = {
         @annotation.tailrec
-        def go(size: Int): Int = if (size >= as.length) size else go(size << 1)
+        def go(size: Int): Int = if (size < as.length) go(size << 1) else size
         go(1)
       }
 
@@ -27,7 +27,7 @@ object A extends App {
           if (xleft + 1 == xright) {
             if (xleft < as.length) data(x) = as(xleft)
           } else {
-            val (l, r)  = (2 * x + 1, 2 * x + 2)
+            val (l, r)  = (x * 2 + 1, x * 2 + 2)
             val xmiddle = (xleft + xright) / 2
 
             data(x) = op(go(l, xleft, xmiddle), go(r, xmiddle, xright))
@@ -39,15 +39,13 @@ object A extends App {
         data
       }
 
-      override def toString: String = data.mkString(" ")
-
-      override def update(idx: Int, elem: A): Unit = {
+      def update(idx: Int, f: A => A): Unit = {
 
         def go(x: Int, xleft: Int, xright: Int): Unit =
           if (xleft > idx || xright <= idx) ()
-          else if (xleft + 1 == xright) data(x) = elem
+          else if (xleft + 1 == xright) data(x) = f(data(x))
           else {
-            val (l, r)  = (2 * x + 1, 2 * x + 2)
+            val (l, r)  = (x * 2 + 1, x * 2 + 2)
             val xmiddle = (xleft + xright) / 2
 
             if (idx < xmiddle) go(l, xleft, xmiddle)
@@ -58,18 +56,21 @@ object A extends App {
         go(0, 0, size)
       }
 
-      override def fold(from: Int, until: Int): A = {
+      def indexWhere[B](b: B)(op: (B, A) => (B, Boolean)): Int = {
 
-        def go(x: Int, xleft: Int, xright: Int): A =
-          if (xleft >= until || xright <= from) z
-          else if (xleft >= from && xright <= until) data(x)
+        def go(b: B, x: Int, xleft: Int, xright: Int): Int =
+          if (xleft + 1 == xright) xleft
           else {
-            val (l, r)  = (2 * x + 1, 2 * x + 2)
+            val (l, r)  = (x * 2 + 1, x * 2 + 2)
             val xmiddle = (xleft + xright) / 2
 
-            op(go(l, xleft, xmiddle), go(r, xmiddle, xright))
+            val (xb, xchild) = op(b, data(l))
+
+            if (xchild) go(xb, l, xleft, xmiddle)
+            else go(xb, r, xmiddle, xright)
           }
-        go(0, 0, size)
+
+        go(b, 0, 0, size)
       }
     }
   }
@@ -77,27 +78,21 @@ object A extends App {
   import InOut._
 
   val Array(n, m) = nextInts(2)
-  val an          = nextLongs(n)
+  val an          = nextInts(n)
 
-  def f(a: Long) = if (a < 0) (0L, a, 0L, 0L) else (a, a, a, a)
-
-  val bn = an.map(f)
-
-  val tree = SegmentTree(bn: _*)((0L, 0L, 0L, 0L)) {
-    case ((aseg, asum, apref, asuf), (bseg, bsum, bpref, bsuf)) =>
-      (aseg max bseg max (asuf + bpref), asum + bsum, apref max (asum + bpref), bsuf max (bsum + asuf))
-  }
-
-  val ans = tree.fold(0, n)._1
-  out.println(ans)
+  val tree = SegmentTree(an: _*)(0)(_ + _)
 
   (0 until m).foreach { _ =>
-    val Array(i, v) = nextInts(2)
+    nextInts(2) match {
+      case Array(1, i) => tree.update(i, a => (a - 1).abs)
+      case Array(2, k) =>
+        val idx = tree.indexWhere(k) {
+          case (k, a) if k < a => (k, true)
+          case (k, a)          => (k - a, false)
+        }
 
-    tree.update(i, f(v))
-
-    val ans = tree.fold(0, n)._1
-    out.println(ans)
+        out.println(idx)
+    }
   }
 
   out.flush()

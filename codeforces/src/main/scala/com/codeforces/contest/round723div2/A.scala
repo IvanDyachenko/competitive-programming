@@ -9,11 +9,11 @@ object A extends App {
   val t = readInt()
 
   (0 until t).foreach { _ =>
-    val n = readInt()
+    val n   = readInt()
     val a2n = readLine().split(" ").map(_.toInt).sorted
     val b2n = (0 until (2 * n)).map {
       case i if i % 2 == 0 => a2n(i / 2)
-      case i               => a2n(n + (i - 1) / 2)
+      case i => a2n(n + (i - 1) / 2)
     }
 
     println(b2n.mkString(" "))

@@ -1,8 +1,7 @@
 package jp.atcoder.abc176.A
 
-/**
-  * A - Takoyaki
-  * https://atcoder.jp/contests/abc176/tasks/abc176_a
+/** A - Takoyaki
+  * - https://atcoder.jp/contests/abc176/tasks/abc176_a
   */
 object Main extends App {
   import scala.io.StdIn._

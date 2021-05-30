@@ -1,8 +1,7 @@
 package jp.atcoder.abc176.B
 
-/**
-  * B - Multiple of 9
-  * https://atcoder.jp/contests/abc176/tasks/abc176_b
+/** B - Multiple of 9
+  * - https://atcoder.jp/contests/abc176/tasks/abc176_b
   */
 object Main extends App {
   import scala.io.StdIn._

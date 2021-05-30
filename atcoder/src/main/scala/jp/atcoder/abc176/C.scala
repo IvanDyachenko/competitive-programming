@@ -1,8 +1,7 @@
 package jp.atcoder.abc176.C
 
-/**
-  * C - Step
-  * https://atcoder.jp/contests/abc176/tasks/abc176_c
+/** C - Step
+  * - https://atcoder.jp/contests/abc176/tasks/abc176_c
   */
 object Main extends App {
   import scala.io.StdIn._

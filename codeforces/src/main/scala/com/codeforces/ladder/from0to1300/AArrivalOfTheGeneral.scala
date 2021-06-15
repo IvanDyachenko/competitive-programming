@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Arrival of the General
-  * https://codeforces.com/problemset/problem/144/A
+/** A. Arrival of the General
+  * - https://codeforces.com/problemset/problem/144/A
   */
 object AArrivalOfTheGeneral extends App {
   import scala.io.StdIn._

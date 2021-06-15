@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Word
-  * https://codeforces.com/problemset/problem/59/A
+/** A. Word
+  * - https://codeforces.com/problemset/problem/59/A
   */
 object AWord extends App {
   import scala.io.StdIn._

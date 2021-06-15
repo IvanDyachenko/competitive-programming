@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * B. Queue at the School
-  * https://codeforces.com/problemset/problem/266/B
+/** B. Queue at the School
+  * - https://codeforces.com/problemset/problem/266/B
   */
 object BQueueAtTheSchool extends App {
   import scala.io.StdIn._

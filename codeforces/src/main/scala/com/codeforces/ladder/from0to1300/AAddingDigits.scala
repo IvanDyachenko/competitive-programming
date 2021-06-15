@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Adding Digits
-  * https://codeforces.com/contest/260/problem/A
+/** A. Adding Digits
+  * - https://codeforces.com/contest/260/problem/A
   */
 object AAddingDigits extends App {
   import scala.io.StdIn._

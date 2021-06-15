@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Perfect Permutation
-  * https://codeforces.com/problemset/problem/233/A
+/** A. Perfect Permutation
+  * - https://codeforces.com/problemset/problem/233/A
   */
 object APerfectPermutation extends App {
   import scala.io.StdIn._

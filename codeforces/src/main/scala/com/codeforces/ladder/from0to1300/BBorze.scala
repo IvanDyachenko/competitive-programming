@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * B. Borze
-  * https://codeforces.com/problemset/problem/32/B
+/** B. Borze
+  * - https://codeforces.com/problemset/problem/32/B
   */
 object BBorze extends App {
   import scala.io.StdIn._

@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Word Capitalization
-  * https://codeforces.com/problemset/problem/281/A
+/** A. Word Capitalization
+  * - https://codeforces.com/problemset/problem/281/A
   */
 object AWordCapitalization extends App {
   import scala.io.StdIn._

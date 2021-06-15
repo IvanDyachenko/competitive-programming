@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * B. Drinks
-  * https://codeforces.com/problemset/problem/200/B
+/** B. Drinks
+  * - https://codeforces.com/problemset/problem/200/B
   */
 object BDrinks extends App {
   import scala.io.StdIn._

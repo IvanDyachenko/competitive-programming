@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Lights Out
-  * https://codeforces.com/problemset/problem/275/A
+/** A. Lights Out
+  * - https://codeforces.com/problemset/problem/275/A
   */
 object ALightsOut extends App {
   import scala.io.StdIn._

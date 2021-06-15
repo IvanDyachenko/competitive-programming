@@ -1,8 +1,7 @@
 package com.codeforces.ladder.from0to1300
 
-/**
-  * A. Beautiful Year
-  * https://codeforces.com/problemset/problem/271/A
+/** A. Beautiful Year
+  * - https://codeforces.com/problemset/problem/271/A
   */
 object ABeautifulYear extends App {
   import scala.io.StdIn._

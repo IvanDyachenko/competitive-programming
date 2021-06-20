@@ -1,8 +1,7 @@
 package com.codeforces.contest.round668div2
 
-/**
-  * C. Balanced Bitstring
-  * https://codeforces.com/contest/1405/problem/C
+/** C. Balanced Bitstring
+  * - https://codeforces.com/contest/1405/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

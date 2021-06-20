@@ -1,8 +1,7 @@
 package com.codeforces.round638div2
 
-/**
-  * B. Phoenix and Beauty
-  * https://codeforces.com/contest/1348/problem/B
+/** B. Phoenix and Beauty
+  * - https://codeforces.com/contest/1348/problem/B
   */
 object B extends App {
   val t = scala.io.StdIn.readInt()

@@ -1,8 +1,7 @@
 package com.codeforces.round638div2
 
-/**
-  * C. Phoenix and Distribution
-  * https://codeforces.com/contest/1348/problem/C
+/** C. Phoenix and Distribution
+  * - https://codeforces.com/contest/1348/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

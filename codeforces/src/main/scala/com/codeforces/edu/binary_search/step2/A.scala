@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step2
 
-/**
-  * A. Packing Rectangles
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/A
+/** A. Packing Rectangles
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/A
   */
 object A extends App {
   import scala.io.StdIn._
@@ -26,7 +25,7 @@ object A extends App {
 
   val r = {
     @annotation.tailrec
-    def go(i: Long): Long = 
+    def go(i: Long): Long =
       if (f(1L << i)) 1L << i
       else go(i + 1)
 

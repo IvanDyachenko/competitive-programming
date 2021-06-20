@@ -1,8 +1,7 @@
 package com.codeforces.round637div2
 
-/**
-  * C. Nastya and Strange Generator
-  * https://codeforces.com/contest/1341/problem/C
+/** C. Nastya and Strange Generator
+  * - https://codeforces.com/contest/1341/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

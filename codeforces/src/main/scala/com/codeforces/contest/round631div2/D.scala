@@ -1,9 +1,7 @@
 package com.codeforces.round631div2
 
-/**
-  * D. Dreamoon Likes Sequences
-  * https://codeforces.com/contest/1330/problem/D
-  * https://codeforces.com/blog/entry/75559
+/** D. Dreamoon Likes Sequences
+  * - https://codeforces.com/contest/1330/problem/D https://codeforces.com/blog/entry/75559
   */
 object D extends App {
   case class Case(d: Int, m: Int)

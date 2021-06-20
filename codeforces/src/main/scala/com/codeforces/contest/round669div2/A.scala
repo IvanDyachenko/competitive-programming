@@ -1,8 +1,7 @@
 package com.codeforces.contest.round669div2
 
-/**
-  * A. Ahahahahahahahaha
-  * https://codeforces.com/contest/1407/problem/0
+/** A. Ahahahahahahahaha
+  * - https://codeforces.com/contest/1407/problem/0
   */
 object A extends App {
   import scala.io.StdIn._

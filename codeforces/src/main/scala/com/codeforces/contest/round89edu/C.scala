@@ -1,8 +1,7 @@
 package com.codeforces.round89edu
 
-/**
-  * C. Palindromic Paths
-  * https://codeforces.com/contest/1366
+/** C. Palindromic Paths
+  * - https://codeforces.com/contest/1366
   */
 object C extends App {
   import scala.io.StdIn._
@@ -19,8 +18,8 @@ object C extends App {
     for {
       i <- 1 to n
       j <- 1 to m
-      k = i + j - 2
-      d = k min (n + m - 2 - k)
+      k  = i + j - 2
+      d  = k min (n + m - 2 - k)
     } b(d)(a(i - 1)(j - 1)) += 1
 
     val ans = b.take((n + m - 1) / 2).foldLeft(0)((a, t) => a + t.min)

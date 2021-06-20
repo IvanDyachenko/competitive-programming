@@ -1,9 +1,7 @@
 package com.codeforces.round633div2
 
-/**
-  * B. Sorted Adjacent Differences
-  * https://codeforces.com/contest/1339/problem/B
-  * https://codeforces.com/blog/entry/75913
+/** B. Sorted Adjacent Differences
+  * - https://codeforces.com/contest/1339/problem/B https://codeforces.com/blog/entry/75913
   */
 object B extends App {
 

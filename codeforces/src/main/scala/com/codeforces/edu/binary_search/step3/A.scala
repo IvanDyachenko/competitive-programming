@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step3
 
-/**
-  * A. Get together
-  * https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/A
+/** A. Get together
+  * - https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/A
   */
 object A extends App {
   import scala.io.StdIn._
@@ -15,8 +14,8 @@ object A extends App {
   }
 
   def f(t: Double): Boolean = {
-    val (l, r) = xvn.foldLeft((Double.MinValue, Double.MaxValue)) {
-      case ((l, r), (x, v)) => (l max (x - t * v), r min (x + t * v))
+    val (l, r) = xvn.foldLeft((Double.MinValue, Double.MaxValue)) { case ((l, r), (x, v)) =>
+      (l max (x - t * v), r min (x + t * v))
     }
     l <= r
   }

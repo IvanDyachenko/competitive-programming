@@ -1,8 +1,7 @@
 package com.codeforces.round650div3
 
-/**
-  * C. Social Distance
-  * https://codeforces.com/contest/1367/problem/C
+/** C. Social Distance
+  * - https://codeforces.com/contest/1367/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

@@ -1,8 +1,7 @@
 package com.codeforces.contest.round96edu
 
-/**
-  * B. Barrels
-  * https://codeforces.com/contest/1430/problem/B
+/** B. Barrels
+  * - https://codeforces.com/contest/1430/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

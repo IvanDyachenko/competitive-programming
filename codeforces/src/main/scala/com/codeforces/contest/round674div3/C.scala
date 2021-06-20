@@ -1,8 +1,7 @@
 package com.codeforces.contest.round674div3
 
-/**
-  * C. Increase and Copy
-  * https://codeforces.com/contest/1426/problem/C
+/** C. Increase and Copy
+  * - https://codeforces.com/contest/1426/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

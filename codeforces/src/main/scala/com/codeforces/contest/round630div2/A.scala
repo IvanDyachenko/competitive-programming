@@ -1,7 +1,7 @@
 package com.codeforces.round630div2
 
-/**
-  * http://codeforces.com/contest/1332/problem/A
+/** A. Exercising Walk
+  * - http://codeforces.com/contest/1332/problem/A
   */
 object A extends App {
   case class Path(a: Int, b: Int, c: Int, d: Int)
@@ -33,12 +33,11 @@ object A extends App {
   val t = scala.io.StdIn.readInt()
 
   val input: List[Case] = (0 until t)
-    .foldLeft(List.empty[Case]) {
-      case (cases, _) =>
-        val path: Path   = scala.io.StdIn.readLine().split(" ").map(_.toInt)
-        val limit: Limit = scala.io.StdIn.readLine().split(" ").map(_.toInt)
+    .foldLeft(List.empty[Case]) { case (cases, _) =>
+      val path: Path   = scala.io.StdIn.readLine().split(" ").map(_.toInt)
+      val limit: Limit = scala.io.StdIn.readLine().split(" ").map(_.toInt)
 
-        Case(path, limit) :: cases
+      Case(path, limit) :: cases
     }
     .reverse
 

@@ -1,8 +1,7 @@
 package com.codeforces.round86edu
 
-/**
-  * A. Road To Zero
-  * https://codeforces.com/contest/1342/problem/A
+/** A. Road To Zero
+  * - https://codeforces.com/contest/1342/problem/A
   */
 object A extends App {
   val t = scala.io.StdIn.readInt()

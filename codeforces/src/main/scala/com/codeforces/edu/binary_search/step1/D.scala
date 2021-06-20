@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step1
 
-/**
-  * D. Fast search
-  * https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/D
+/** D. Fast search
+  * - https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/D
   */
 object D extends App {
   import scala.io.StdIn._

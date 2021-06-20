@@ -1,8 +1,7 @@
 package com.codeforces.round85edu
 
-/**
-  * B. Middle Class
-  * https://codeforces.com/contest/1334/problem/B
+/** B. Middle Class
+  * - https://codeforces.com/contest/1334/problem/B
   */
 object B extends App {
   case class Savings(x: Int, as: List[Int])
@@ -18,10 +17,9 @@ object B extends App {
     val overage: Long = rs.foldLeft(0L)(_ + _ - x)
 
     val (_, pl) = ps.reverse
-      .foldLeft((overage, 0)) {
-        case ((overage, count), a) =>
-          if (overage < x - a) (overage, count)
-          else (overage - x + a, count + 1)
+      .foldLeft((overage, 0)) { case ((overage, count), a) =>
+        if (overage < x - a) (overage, count)
+        else (overage - x + a, count + 1)
       }
 
     rl + pl

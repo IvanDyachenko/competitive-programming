@@ -1,8 +1,7 @@
 package com.codeforces.round643div2
 
-/**
-  * A. Sequence with Digits
-  * https://codeforces.com/contest/1355/problem/A
+/** A. Sequence with Digits
+  * - https://codeforces.com/contest/1355/problem/A
   */
 object A extends App {
   private def an(a1: Long, n: Long): Long = {

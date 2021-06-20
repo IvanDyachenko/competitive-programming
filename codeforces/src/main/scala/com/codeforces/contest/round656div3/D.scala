@@ -1,8 +1,7 @@
 package com.codeforces.round656div3
 
-/**
-  * D. a-Good String
-  * https://codeforces.com/contest/1385/problem/D
+/** D. a-Good String
+  * - https://codeforces.com/contest/1385/problem/D
   */
 object D extends App {
   import scala.io.StdIn._

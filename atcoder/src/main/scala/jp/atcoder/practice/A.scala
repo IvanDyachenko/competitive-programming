@@ -1,8 +1,7 @@
 package jp.atcoder.practice.A
 
-/**
-  * A - Welcome to AtCoder
-  * https://atcoder.jp/contests/practice/tasks/practice_1
+/** A - Welcome to AtCoder
+  * - https://atcoder.jp/contests/practice/tasks/practice_1
   */
 object Main extends App {
   import scala.io.StdIn._

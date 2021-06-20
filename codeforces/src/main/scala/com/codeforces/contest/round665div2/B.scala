@@ -1,8 +1,7 @@
 package com.codeforces.round665div2
 
-/**
-  * B. Ternary Sequence
-  * https://codeforces.com/contest/1401/problem/B
+/** B. Ternary Sequence
+  * - https://codeforces.com/contest/1401/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

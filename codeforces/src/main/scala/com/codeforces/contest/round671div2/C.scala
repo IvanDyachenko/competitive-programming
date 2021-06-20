@@ -1,8 +1,7 @@
 package com.codeforces.contest.round671div2
 
-/**
-  * C. Killjoy
-  * https://codeforces.com/contest/1419/problem/C
+/** C. Killjoy
+  * - https://codeforces.com/contest/1419/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

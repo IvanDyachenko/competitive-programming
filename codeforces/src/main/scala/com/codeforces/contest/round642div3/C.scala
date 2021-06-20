@@ -1,8 +1,7 @@
 package com.codeforces.round642div3
 
-/**
-  * C. Board Moves
-  * https://codeforces.com/contest/1353/problem/C
+/** C. Board Moves
+  * - https://codeforces.com/contest/1353/problem/C
   */
 object C extends App {
 

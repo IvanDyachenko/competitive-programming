@@ -1,8 +1,7 @@
 package com.codeforces.round656div3
 
-/**
-  * A. Three Pairwise Maximums
-  * https://codeforces.com/contest/1385/problem/A
+/** A. Three Pairwise Maximums
+  * - https://codeforces.com/contest/1385/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

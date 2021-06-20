@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step1
 
-/**
-  * C. Closest to the Right
-  * https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C
+/** C. Closest to the Right
+  * - https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step3
 
-/**
-  * B. Splitting an Array
-  * https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/B
+/** B. Splitting an Array
+  * - https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

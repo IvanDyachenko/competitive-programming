@@ -1,8 +1,7 @@
 package com.codeforces.contest.round96edu
 
-/**
-  * A. Number of Apartments
-  * https://codeforces.com/contest/1430/problem/A
+/** A. Number of Apartments
+  * - https://codeforces.com/contest/1430/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

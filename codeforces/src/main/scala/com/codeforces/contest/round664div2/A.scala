@@ -1,8 +1,7 @@
 package com.codeforces.round664div2
 
-/**
-  * A. Boboniu Likes to Color Balls
-  * https://codeforces.com/contest/1395/problem/A
+/** A. Boboniu Likes to Color Balls
+  * - https://codeforces.com/contest/1395/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

@@ -1,8 +1,7 @@
 package com.codeforces.round644div3
 
-/**
-  * D. Buying Shovels
-  * https://codeforces.com/contest/1360/problem/D
+/** D. Buying Shovels
+  * - https://codeforces.com/contest/1360/problem/D
   */
 object D extends App {
   val t = scala.io.StdIn.readInt()

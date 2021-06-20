@@ -1,8 +1,7 @@
 package com.codeforces.round632div2
 
-/**
-  * B. Kind Anton
-  * https://codeforces.com/contest/1333/problem/B
+/** B. Kind Anton
+  * - https://codeforces.com/contest/1333/problem/B
   */
 object B extends App {
   case class Case(as: List[Int], bs: List[Int])
@@ -13,11 +12,10 @@ object B extends App {
     val p = as.indexOf(1)
     val m = as.indexOf(-1)
 
-    bs.zip(as).zipWithIndex.forall {
-      case ((a, b), i) =>
-        if (b == a) true
-        else if (b > a) m > -1 && m < i
-        else p > -1 && p < i
+    bs.zip(as).zipWithIndex.forall { case ((a, b), i) =>
+      if (b == a) true
+      else if (b > a) m > -1 && m < i
+      else p > -1 && p < i
     }
   }
 

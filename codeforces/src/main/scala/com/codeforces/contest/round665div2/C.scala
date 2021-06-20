@@ -1,8 +1,7 @@
 package com.codeforces.round665div2
 
-/**
-  * C. Mere Array
-  * https://codeforces.com/contest/1401/problem/C
+/** C. Mere Array
+  * - https://codeforces.com/contest/1401/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

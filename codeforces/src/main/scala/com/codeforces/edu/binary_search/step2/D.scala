@@ -1,27 +1,25 @@
 package com.codeforces.edu.binary_search.step2
 
-/**
-  * D. Children Holiday
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/D
+/** D. Children Holiday
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/D
   */
 object D extends App {
   import scala.io.StdIn._
 
   val Array(m, n) = readLine().split(" ").map(_.toInt)
-  val skills = Array.fill(n) {
+  val skills      = Array.fill(n) {
     val Array(t, z, y) = readLine().split(" ").map(_.toInt)
     (t, y, z)
   }
 
   def f: Int => Boolean =
     t =>
-      skills.foldLeft(0) {
-        case (ballons, (ti, yi, zi)) =>
-          val cycle                 = ti * zi + yi
-          val (quotient, remainder) = (t / cycle, (t % cycle / ti) min zi)
-          val count                 = quotient * zi + remainder
+      skills.foldLeft(0) { case (ballons, (ti, yi, zi)) =>
+        val cycle                 = ti * zi + yi
+        val (quotient, remainder) = (t / cycle, (t % cycle / ti) min zi)
+        val count                 = quotient * zi + remainder
 
-          ballons + count
+        ballons + count
       } >= m
 
   def reserve = {
@@ -46,15 +44,14 @@ object D extends App {
     else binarySearch(0, reserve)
 
   println(ans)
-  skills.foldLeft(m) {
-    case (m, (ti, yi, zi)) =>
-      val cycle                 = ti * zi + yi
-      val (quotient, remainder) = (ans / cycle, (ans % cycle / ti) min zi)
-      val count                 = (quotient * zi + remainder) min m
+  skills.foldLeft(m) { case (m, (ti, yi, zi)) =>
+    val cycle                 = ti * zi + yi
+    val (quotient, remainder) = (ans / cycle, (ans % cycle / ti) min zi)
+    val count                 = (quotient * zi + remainder) min m
 
-      print(s"$count ")
+    print(s"$count ")
 
-      m - count
+    m - count
   }
   println()
 }

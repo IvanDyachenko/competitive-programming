@@ -1,8 +1,7 @@
 package com.codeforces.contest.round671div2
 
-/**
-  * B. Stairs
-  * https://codeforces.com/contest/1419/problem/B
+/** B. Stairs
+  * - https://codeforces.com/contest/1419/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

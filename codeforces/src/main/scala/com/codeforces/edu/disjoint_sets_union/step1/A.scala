@@ -1,8 +1,7 @@
 package com.codeforces.edu.disjoint_sets_union.step1
 
-/**
-  * A. Disjoint Sets Union
-  * https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/A
+/** A. Disjoint Sets Union
+  * - https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/A
   */
 object A extends App {
   import scala.collection.mutable
@@ -43,7 +42,7 @@ object A extends App {
 
   (0 until m).foreach { _ =>
     nextLine().split(" ") match {
-      case Array("get", u, v) =>
+      case Array("get", u, v)   =>
         val ans = if (set.get(u.toInt - 1) == set.get(v.toInt - 1)) "YES" else "NO"
         out.println(ans)
       case Array("union", u, v) => set.union(u.toInt - 1, v.toInt - 1)

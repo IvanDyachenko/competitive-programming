@@ -1,8 +1,7 @@
 package com.codeforces.round633div2
 
-/**
-  * C. Powered Addition
-  * https://codeforces.com/contest/1339/problem/C
+/** C. Powered Addition
+  * - https://codeforces.com/contest/1339/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

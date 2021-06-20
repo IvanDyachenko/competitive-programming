@@ -1,8 +1,7 @@
 package com.codeforces.round639div2
 
-/**
-  * A. Puzzle Pieces
-  * https://codeforces.com/contest/1345/problem/A
+/** A. Puzzle Pieces
+  * - https://codeforces.com/contest/1345/problem/A
   */
 object A extends App {
   val t = scala.io.StdIn.readInt()

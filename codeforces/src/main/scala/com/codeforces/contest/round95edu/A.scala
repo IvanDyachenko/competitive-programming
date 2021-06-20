@@ -1,8 +1,7 @@
 package com.codeforces.contest.round95edu
 
-/**
-  * A. Buying Torches
-  * https://codeforces.com/contest/1418/problem/A
+/** A. Buying Torches
+  * - https://codeforces.com/contest/1418/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

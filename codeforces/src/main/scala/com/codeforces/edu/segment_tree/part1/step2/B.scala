@@ -1,8 +1,7 @@
 package com.codeforces.edu.segment_tree.part1.step2
 
-/**
-  * B. K-th one
-  * https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/B
+/** B. K-th one
+  * - https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/B
   */
 object B extends App {
   import scala.reflect.ClassTag

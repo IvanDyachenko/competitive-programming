@@ -1,8 +1,7 @@
 package com.codeforces.round647div2
 
-/**
-  * A. Johnny and Ancient Computer
-  * https://codeforces.com/contest/1362/problem/A
+/** A. Johnny and Ancient Computer
+  * - https://codeforces.com/contest/1362/problem/A
   */
 object A extends App {
   val t = scala.io.StdIn.readInt()

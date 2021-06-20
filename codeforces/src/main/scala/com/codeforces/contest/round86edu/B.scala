@@ -1,8 +1,7 @@
 package com.codeforces.round86edu
 
-/**
-  * B. Binary Period
-  * https://codeforces.com/contest/1342/problem/B
+/** B. Binary Period
+  * - https://codeforces.com/contest/1342/problem/B
   */
 object B extends App {
   val n = scala.io.StdIn.readInt()

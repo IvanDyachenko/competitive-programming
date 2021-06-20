@@ -1,8 +1,7 @@
 package com.codeforces.edu.segment_tree.part1.step2
 
-/**
-  * A. Segment with the Maximum Sum
-  * https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/A
+/** A. Segment with the Maximum Sum
+  * - https://codeforces.com/edu/course/2/lesson/4/2/practice/contest/273278/problem/A
   */
 object A extends App {
   import scala.reflect.ClassTag
@@ -83,9 +82,8 @@ object A extends App {
 
   val bn = an.map(f)
 
-  val tree = SegmentTree(bn: _*)((0L, 0L, 0L, 0L)) {
-    case ((aseg, asum, apref, asuf), (bseg, bsum, bpref, bsuf)) =>
-      (aseg max bseg max (asuf + bpref), asum + bsum, apref max (asum + bpref), bsuf max (bsum + asuf))
+  val tree = SegmentTree(bn: _*)((0L, 0L, 0L, 0L)) { case ((aseg, asum, apref, asuf), (bseg, bsum, bpref, bsuf)) =>
+    (aseg max bseg max (asuf + bpref), asum + bsum, apref max (asum + bpref), bsuf max (bsum + asuf))
   }
 
   val ans = tree.fold(0, n)._1

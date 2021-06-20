@@ -1,8 +1,7 @@
 package com.codeforces.round643div2
 
-/**
-  * C. Count Triangles
-  * https://codeforces.com/contest/1355/problem/C
+/** C. Count Triangles
+  * - https://codeforces.com/contest/1355/problem/C
   */
 object C extends App {
   val Array(a, b, c, d) = scala.io.StdIn.readLine().split(" ").map(_.toInt)

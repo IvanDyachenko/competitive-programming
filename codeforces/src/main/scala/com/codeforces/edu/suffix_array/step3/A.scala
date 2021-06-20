@@ -1,8 +1,7 @@
 package com.codeforces.edu.suffix_array.step3
 
-/**
-  * A. Substring Search
-  * https://codeforces.com/edu/course/2/lesson/2/3/practice/contest/269118/problem/A
+/** A. Substring Search
+  * - https://codeforces.com/edu/course/2/lesson/2/3/practice/contest/269118/problem/A
   */
 object A extends App {
   import scala.io.StdIn._
@@ -15,7 +14,7 @@ object A extends App {
     val cs = Array.ofDim[Int](n)
 
     s.zipWithIndex.sortBy(_._1).zipWithIndex.foldLeft('$') {
-      case (_, ((curr, p), 0)) =>
+      case (_, ((curr, p), 0))    =>
         ps(0) = p
         cs(p) = 0
         curr
@@ -75,7 +74,7 @@ object A extends App {
     def search(left: Int, right: Int): Boolean =
       if (left + 1 >= right) {
         val shift = suffs(left)
-        
+
         subStr == str.slice(shift, shift + subStrLen)
       } else {
         val midpoint = (left + right) / 2

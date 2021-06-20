@@ -1,8 +1,7 @@
 package com.codeforces.round657div2
 
-/**
-  * A. Acacius and String
-  * https://codeforces.com/contest/1379/problem/A
+/** A. Acacius and String
+  * - https://codeforces.com/contest/1379/problem/A
   */
 object A extends App {
   import scala.io.StdIn._
@@ -27,7 +26,7 @@ object A extends App {
     val ans = (0 until n).collectFirst { case i if check(i) => i }
 
     ans match {
-      case None => println("NO")
+      case None    => println("NO")
       case Some(i) =>
         val res = sn.patch(i, target, target.length).map { case '?' => 'd'; case c => c }
         println("YES")

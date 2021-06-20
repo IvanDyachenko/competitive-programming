@@ -1,8 +1,7 @@
 package com.codeforces.round642div3
 
-/**
-  * D. Constructing the Array
-  * https://codeforces.com/contest/1353/problem/D
+/** D. Constructing the Array
+  * - https://codeforces.com/contest/1353/problem/D
   */
 object D extends App {
   import scala.collection.mutable.TreeSet

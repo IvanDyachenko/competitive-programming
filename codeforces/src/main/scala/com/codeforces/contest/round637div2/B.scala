@@ -1,8 +1,7 @@
 package com.codeforces.round637div2
 
-/**
-  * B. Nastya and Door
-  * https://codeforces.com/contest/1341/problem/B
+/** B. Nastya and Door
+  * - https://codeforces.com/contest/1341/problem/B
   */
 object B extends App {
   val t = scala.io.StdIn.readInt()
@@ -19,12 +18,11 @@ object B extends App {
     val prefixes = Array.fill(n)(0)
     (1 until n).foreach(i => prefixes(i) = prefixes(i - 1) + peaks(i))
 
-    (0 to (n - k)).foldLeft((0, 0)) {
-      case ((t, l), i) =>
-        val f = prefixes(i + k - 2) - prefixes(i)
+    (0 to (n - k)).foldLeft((0, 0)) { case ((t, l), i) =>
+      val f = prefixes(i + k - 2) - prefixes(i)
 
-        if (f > t) (f, i)
-        else (t, l)
+      if (f > t) (f, i)
+      else (t, l)
     }
   }
 

@@ -1,8 +1,7 @@
 package com.codeforces.round634div3
 
-/**
-  * C. Two Teams Composing
-  * https://codeforces.com/contest/1335/problem/C
+/** C. Two Teams Composing
+  * - https://codeforces.com/contest/1335/problem/C
   */
 object C extends App {
 

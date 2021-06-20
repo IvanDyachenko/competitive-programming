@@ -1,8 +1,7 @@
 package com.codeforces.round642div3
 
-/**
-  * B. Two Arrays And Swaps
-  * https://codeforces.com/contest/1353/problem/B
+/** B. Two Arrays And Swaps
+  * - https://codeforces.com/contest/1353/problem/B
   */
 object B extends App {
 

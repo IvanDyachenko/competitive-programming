@@ -1,8 +1,7 @@
 package com.codeforces.round648div2
 
-/**
-  * B. Trouble Sort
-  * https://codeforces.com/contest/1365/problem/B
+/** B. Trouble Sort
+  * - https://codeforces.com/contest/1365/problem/B
   */
 object B extends App {
   val t = scala.io.StdIn.readInt()

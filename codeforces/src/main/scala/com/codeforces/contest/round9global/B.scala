@@ -1,8 +1,7 @@
 package com.codeforces.round9global
 
-/**
-  * B. Neighbor Grid
-  * https://codeforces.com/contest/1375/problem/B
+/** B. Neighbor Grid
+  * - https://codeforces.com/contest/1375/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

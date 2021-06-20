@@ -1,8 +1,7 @@
 package com.codeforces.round641div2
 
-/**
-  * B. Orac and Models
-  * https://codeforces.com/contest/1350/problem/B
+/** B. Orac and Models
+  * - https://codeforces.com/contest/1350/problem/B
   */
 object B extends App {
 

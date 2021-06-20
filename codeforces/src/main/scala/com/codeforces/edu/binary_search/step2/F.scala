@@ -3,9 +3,8 @@ package com.codeforces.edu.binary_search.step2
 import scala.collection.Searching.SearchResult
 import scala.collection.Searching.InsertionPoint
 
-/**
-  * F. String Game
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/F
+/** F. String Game
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/F
   */
 object F extends App {
   import scala.io.StdIn._

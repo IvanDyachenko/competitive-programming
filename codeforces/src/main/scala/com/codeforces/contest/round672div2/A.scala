@@ -1,8 +1,7 @@
 package com.codeforces.contest.round672div2
 
-/**
-  * A. Cubes Sorting
-  * https://codeforces.com/contest/1420/problem/A
+/** A. Cubes Sorting
+  * - https://codeforces.com/contest/1420/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

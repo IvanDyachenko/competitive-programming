@@ -1,8 +1,7 @@
 package com.codeforces.round9global
 
-/**
-  * A. Sign Flipping
-  * https://codeforces.com/contest/1375/problem/A
+/** A. Sign Flipping
+  * - https://codeforces.com/contest/1375/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

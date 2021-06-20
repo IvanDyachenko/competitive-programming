@@ -1,8 +1,7 @@
 package com.codeforces.round644div3
 
-/**
-  * C. Similar Pairs
-  * https://codeforces.com/contest/1360/problem/C
+/** C. Similar Pairs
+  * - https://codeforces.com/contest/1360/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

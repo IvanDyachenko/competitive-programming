@@ -1,8 +1,7 @@
 package com.codeforces.round656div3
 
-/**
-  * B. Restore the Permutation by Merger
-  * https://codeforces.com/contest/1385/problem/B
+/** B. Restore the Permutation by Merger
+  * - https://codeforces.com/contest/1385/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

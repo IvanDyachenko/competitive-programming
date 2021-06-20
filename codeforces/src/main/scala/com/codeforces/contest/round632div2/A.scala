@@ -1,8 +1,7 @@
 package com.codeforces.round632div2
 
-/**
-  * A. Little Artem
-  * https://codeforces.com/contest/1333/problem/A
+/** A. Little Artem
+  * - https://codeforces.com/contest/1333/problem/A
   */
 object A extends App {
   case class Size(n: Int, m: Int)

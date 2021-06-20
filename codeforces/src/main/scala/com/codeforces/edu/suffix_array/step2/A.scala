@@ -1,8 +1,7 @@
 package com.codeforces.edu.suffix_array.step2
 
-/**
-  * A. Suffix Array - 2
-  * https://codeforces.com/edu/course/2/lesson/2/2/practice/contest/269103/problem/A
+/** A. Suffix Array - 2
+  * - https://codeforces.com/edu/course/2/lesson/2/2/practice/contest/269103/problem/A
   */
 object A extends App {
   import scala.io.StdIn._
@@ -15,7 +14,7 @@ object A extends App {
     var cs = Array.ofDim[Int](n)
 
     s.zipWithIndex.sortBy(_._1).zipWithIndex.foldLeft('$') {
-      case (_, ((curr, p), 0)) =>
+      case (_, ((curr, p), 0))    =>
         ps(0) = p
         cs(p) = 0
         curr

@@ -1,8 +1,7 @@
 package com.codeforces.round85edu
 
-/**
-  * A. Level Statistics
-  * https://codeforces.com/contest/1334/problem/A
+/** A. Level Statistics
+  * - https://codeforces.com/contest/1334/problem/A
   */
 object A extends App {
   case class Stat(p: Int, c: Int)

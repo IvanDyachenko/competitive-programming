@@ -1,8 +1,7 @@
 package com.codeforces.round648div2
 
-/**
-  * E. Maximum Subsequence Value
-  * https://codeforces.com/contest/1365/problem/E
+/** E. Maximum Subsequence Value
+  * - https://codeforces.com/contest/1365/problem/E
   */
 object E extends App {
   val n  = scala.io.StdIn.readInt()
@@ -16,9 +15,9 @@ object E extends App {
       for {
         i <- 0 until n
         j <- i until n
-        a = an(i) | an(j)
+        a  = an(i) | an(j)
         k <- j until n
-        b = a | an(k)
+        b  = a | an(k)
       } c = b max c
 
       c

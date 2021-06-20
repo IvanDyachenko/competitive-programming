@@ -1,8 +1,7 @@
 package com.codeforces.round9global
 
-/**
-  * D. Replace by MEX
-  * https://codeforces.com/contest/1375/problem/D
+/** D. Replace by MEX
+  * - https://codeforces.com/contest/1375/problem/D
   */
 object D extends App {
   import scala.io.StdIn._

@@ -1,10 +1,7 @@
 package com.codeforces.edu.binary_search.step2
 
-import java.awt.print.Book
-
-/**
-  * H. Hamburgers
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/H
+/** H. Hamburgers
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/H
   */
 object H extends App {
   import scala.io.StdIn._

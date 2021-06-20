@@ -1,8 +1,7 @@
 package com.codeforces.contest.round672div2
 
-/**
-  * B. Rock and Lever
-  * https://codeforces.com/contest/1420/problem/B
+/** B. Rock and Lever
+  * - https://codeforces.com/contest/1420/problem/B
   */
 object B extends App {
   import scala.io.StdIn._
@@ -21,10 +20,9 @@ object B extends App {
 
     val bits = Array.fill(32)(0)
 
-    val ans = an.foldLeft(0L) {
-      case (count, h) =>
-        bits(h) += 1
-        count + bits(h) - 1
+    val ans = an.foldLeft(0L) { case (count, h) =>
+      bits(h) += 1
+      count + bits(h) - 1
     }
 
     println(ans)

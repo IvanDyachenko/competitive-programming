@@ -1,8 +1,7 @@
 package com.codeforces.round648div2
 
-/**
-  * C. Rotation Matching
-  * https://codeforces.com/contest/1365/problem/C
+/** C. Rotation Matching
+  * - https://codeforces.com/contest/1365/problem/C
   */
 object C extends App {
   import scala.collection.mutable

@@ -1,8 +1,7 @@
 package com.codeforces.edu.suffix_array.step5
 
-/**
-  * C. Sorting Substrings
-  * https://codeforces.com/edu/course/2/lesson/2/5/practice/contest/269656/problem/C
+/** C. Sorting Substrings
+  * - https://codeforces.com/edu/course/2/lesson/2/5/practice/contest/269656/problem/C
   */
 object C extends App {
   import scala.reflect.ClassTag
@@ -49,7 +48,7 @@ object C extends App {
     val cs = Array.ofDim[Int](n)
 
     str.zipWithIndex.sortBy(_._1).zipWithIndex.foldLeft(' ') {
-      case (_, ((curr, p), 0)) =>
+      case (_, ((curr, p), 0))    =>
         ps(0) = p
         cs(p) = 0
         curr
@@ -64,17 +63,16 @@ object C extends App {
       if (1 << iter > n) {
         val lcp = Array.ofDim[Int](n)
 
-        s.indices.foldLeft(0) {
-          case (k, i) =>
-            val pi = cs(i)
-            val pj = pi - 1
-            val j  = ps(pj)
+        s.indices.foldLeft(0) { case (k, i) =>
+          val pi = cs(i)
+          val pj = pi - 1
+          val j  = ps(pj)
 
-            @annotation.tailrec
-            def go(k: Int): Int = if (str(i + k) == str(j + k)) go(k + 1) else k
+          @annotation.tailrec
+          def go(k: Int): Int = if (str(i + k) == str(j + k)) go(k + 1) else k
 
-            lcp(pi) = go(0 max (k - 1))
-            lcp(pi)
+          lcp(pi) = go(0 max (k - 1))
+          lcp(pi)
         }
 
         val st = SparseTable(lcp: _*)(Int.MaxValue)(_ min _)
@@ -96,10 +94,9 @@ object C extends App {
           go(-1, j)
         }
 
-        lrs
-          .map { case (l, r) => (binarySearch(cs(l), r - l + 1), r - l + 1, l, r) }
-          .sorted
-          .map { case (_, _, l, r) => (l, r) }
+        lrs.map { case (l, r) => (binarySearch(cs(l), r - l + 1), r - l + 1, l, r) }.sorted.map { case (_, _, l, r) =>
+          (l, r)
+        }
       } else {
         val sp = Array.ofDim[Int](n)
         val sc = Array.ofDim[Int](n)
@@ -137,8 +134,8 @@ object C extends App {
 
   import InOut._
 
-  val s = nextLine()
-  val n = nextInt()
+  val s   = nextLine()
+  val n   = nextInt()
   val lrs = Array.fill(n) {
     val Array(l, r) = nextInts(2)
     (l - 1, r - 1)

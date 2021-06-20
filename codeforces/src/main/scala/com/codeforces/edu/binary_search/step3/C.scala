@@ -1,12 +1,13 @@
 package com.codeforces.edu.binary_search.step3
 
-/** C. Cows in Stalls https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/C
+/** C. Cows in Stalls
+  * - https://codeforces.com/edu/course/2/lesson/6/3/practice/contest/285083/problem/C
   */
 object C extends App {
   import scala.io.StdIn._
 
   val Array(n, k) = readLine().split(" ").map(_.toInt)
-  val sn = readLine().split(" ").map(_.toInt)
+  val sn          = readLine().split(" ").map(_.toInt)
 
   def f(d: Int): Boolean = {
 

@@ -1,8 +1,7 @@
 package com.codeforces.contest.round671div2
 
-/**
-  * D1. Sage's Birthday (easy version)
-  * https://codeforces.com/contest/1419/problem/D1
+/** D1. Sage's Birthday (easy version)
+  * - https://codeforces.com/contest/1419/problem/D1
   */
 object D1 extends App {
   import scala.io.StdIn._

@@ -1,8 +1,7 @@
 package com.codeforces.round640div4
 
-/**
-  * B. Same Parity Summands
-  * https://codeforces.com/contest/1352/problem/B
+/** B. Same Parity Summands
+  * - https://codeforces.com/contest/1352/problem/B
   */
 object B extends App {
 

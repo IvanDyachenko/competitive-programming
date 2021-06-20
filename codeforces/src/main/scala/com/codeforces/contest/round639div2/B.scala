@@ -1,8 +1,7 @@
 package com.codeforces.round639div2
 
-/**
-  * B. Card Constructions
-  * https://codeforces.com/contest/1345/problem/B
+/** B. Card Constructions
+  * - https://codeforces.com/contest/1345/problem/B
   */
 object B extends App {
   val t = scala.io.StdIn.readInt()

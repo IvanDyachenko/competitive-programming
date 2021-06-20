@@ -1,8 +1,7 @@
 package com.codeforces.round93edu
 
-/**
-  * A. Bad Triangle
-  * https://codeforces.com/contest/1398/problem/A
+/** A. Bad Triangle
+  * - https://codeforces.com/contest/1398/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

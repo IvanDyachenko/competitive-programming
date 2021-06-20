@@ -1,8 +1,7 @@
 package com.codeforces.round91edu
 
-/**
-  * D. Berserk And Fireball
-  * https://codeforces.com/contest/1380/problem/D
+/** D. Berserk And Fireball
+  * - https://codeforces.com/contest/1380/problem/D
   */
 object D extends App {
   import scala.io.StdIn._
@@ -31,7 +30,7 @@ object D extends App {
 
   val ans = bn
     .foldLeft((0L, 0)) {
-      case ((-1L, _), _) => (-1L, 0)
+      case ((-1L, _), _)       => (-1L, 0)
       case ((amount, from), b) =>
         val until = an.indexOf(b, from)
 

@@ -1,8 +1,7 @@
 package com.codeforces.round634div3
 
-/**
-  * B. Construct the String
-  * https://codeforces.com/contest/1335/problem/B
+/** B. Construct the String
+  * - https://codeforces.com/contest/1335/problem/B
   */
 object B extends App {
   val t = scala.io.StdIn.readInt()

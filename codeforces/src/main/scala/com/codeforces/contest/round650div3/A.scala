@@ -1,8 +1,7 @@
 package com.codeforces.round650div3
 
-/**
-  * A. Short Substrings
-  * https://codeforces.com/contest/1367/problem/A
+/** A. Short Substrings
+  * - https://codeforces.com/contest/1367/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

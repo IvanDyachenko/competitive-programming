@@ -1,10 +1,8 @@
 package com.codeforces.round641div2
 
-/**
-  * D. Orac and Medians
-  * https://codeforces.com/contest/1350/problem/D
-  *
-  * https://codeforces.com/blog/entry/77284
+/** D. Orac and Medians
+  * - https://codeforces.com/contest/1350/problem/D
+  * - https://codeforces.com/blog/entry/77284
   */
 object D extends App {
   import scala.io.StdIn._

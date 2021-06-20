@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step2
 
-/**
-  * E. Equation
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/E
+/** E. Equation
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/E
   */
 object E extends App {
   import scala.io.StdIn._

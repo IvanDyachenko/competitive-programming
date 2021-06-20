@@ -1,8 +1,7 @@
 package com.codeforces.edu.segment_tree.part1.step1
 
-/**
-  * B. Segment Tree for the Minimum
-  * https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/B
+/** B. Segment Tree for the Minimum
+  * - https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/B
   */
 object B extends App {
   import scala.reflect.ClassTag

@@ -1,8 +1,7 @@
 package com.codeforces.round90edu
 
-/**
-  * A. Donut Shops
-  * https://codeforces.com/contest/1373/problem/A
+/** A. Donut Shops
+  * - https://codeforces.com/contest/1373/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

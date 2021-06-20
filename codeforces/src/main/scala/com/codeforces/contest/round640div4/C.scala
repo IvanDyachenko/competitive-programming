@@ -1,8 +1,7 @@
 package com.codeforces.round640div4
 
-/**
-  * C. K-th Not Divisible by n
-  * https://codeforces.com/contest/1352/problem/C
+/** C. K-th Not Divisible by n
+  * - https://codeforces.com/contest/1352/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

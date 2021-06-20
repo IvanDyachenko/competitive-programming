@@ -1,8 +1,7 @@
 package com.codeforces.contest.round671div2
 
-/**
-  * A. Digit Game
-  * https://codeforces.com/contest/1419/problem/A
+/** A. Digit Game
+  * - https://codeforces.com/contest/1419/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

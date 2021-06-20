@@ -1,8 +1,7 @@
 package com.codeforces.edu.disjoint_sets_union.step1
 
-/**
-  * B. Disjoint Sets Union 2
-  * https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/B
+/** B. Disjoint Sets Union 2
+  * - https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/B
   */
 object B extends App {
   import scala.collection.mutable

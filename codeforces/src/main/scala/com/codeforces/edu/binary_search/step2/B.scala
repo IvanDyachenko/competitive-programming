@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step2
 
-/**
-  * B. Ropes
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/B
+/** B. Ropes
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

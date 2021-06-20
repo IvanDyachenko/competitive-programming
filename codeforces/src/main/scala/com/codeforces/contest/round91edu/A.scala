@@ -1,8 +1,7 @@
 package com.codeforces.round91edu
 
-/**
-  * A. Three Indices
-  * https://codeforces.com/contest/1380/problem/A
+/** A. Three Indices
+  * - https://codeforces.com/contest/1380/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

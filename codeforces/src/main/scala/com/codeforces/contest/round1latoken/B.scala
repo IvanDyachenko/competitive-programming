@@ -1,7 +1,6 @@
 package com.codeforces.contest.round1latoken
 
-/**
-  * B. Histogram Ugliness
+/** B. Histogram Ugliness
   * - https://codeforces.com/contest/1534/problem/B
   */
 object B extends App {

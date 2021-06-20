@@ -1,8 +1,7 @@
 package com.codeforces.round642div3
 
-/**
-  * A. Most Unstable Array
-  * https://codeforces.com/contest/1353/problem/A
+/** A. Most Unstable Array
+  * - https://codeforces.com/contest/1353/problem/A
   */
 object A extends App {
 

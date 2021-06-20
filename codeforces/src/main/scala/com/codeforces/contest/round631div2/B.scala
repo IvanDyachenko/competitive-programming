@@ -1,8 +1,7 @@
 package com.codeforces.round631div2
 
-/**
-  * B. Dreamoon Likes Permutations
-  * https://codeforces.com/contest/1330/problem/B
+/** B. Dreamoon Likes Permutations
+  * - https://codeforces.com/contest/1330/problem/B
   */
 object B extends App {
 
@@ -11,18 +10,19 @@ object B extends App {
     val ma = as.max
 
     List(ma, n - ma)
-      .foldLeft(List.empty[(Int, Int)]) {
-        case (ls, i) =>
-          val (l1, l2) = (i, n - i)
+      .foldLeft(List.empty[(Int, Int)]) { case (ls, i) =>
+        val (l1, l2) = (i, n - i)
 
-          val (q1, q2) = as.splitAt(i)
-          val (p1, p2) = (q1.distinct, q2.distinct)
+        val (q1, q2) = as.splitAt(i)
+        val (p1, p2) = (q1.distinct, q2.distinct)
 
-          if (p1.length == l1 && p1.min == 1 && p1.max == l1 &&
-              p2.length == l2 && p2.min == 1 && p2.max == l2)
-            (l1, l2) :: ls
-          else
-            ls
+        if (
+          p1.length == l1 && p1.min == 1 && p1.max == l1 &&
+          p2.length == l2 && p2.min == 1 && p2.max == l2
+        )
+          (l1, l2) :: ls
+        else
+          ls
       }
       .distinct
   }

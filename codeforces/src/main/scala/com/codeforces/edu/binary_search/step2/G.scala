@@ -1,8 +1,7 @@
 package com.codeforces.edu.binary_search.step2
 
-/**
-  * G. Student Councils
-  * https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/G
+/** G. Student Councils
+  * - https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/G
   */
 object G extends App {
   import scala.io.StdIn._
@@ -12,9 +11,8 @@ object G extends App {
   val an = Array.fill(n)(readLong())
 
   def f(c: Long): Boolean = {
-    val (r, _) = an.foldLeft((0L, 0L)) {
-      case ((r, t), a) =>
-        (r + (t + a.min(c)) / c, (t + a.min(c)) % c)
+    val (r, _) = an.foldLeft((0L, 0L)) { case ((r, t), a) =>
+      (r + (t + a.min(c)) / c, (t + a.min(c)) % c)
     }
     r >= k
   }

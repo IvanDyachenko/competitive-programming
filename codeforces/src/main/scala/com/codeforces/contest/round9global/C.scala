@@ -1,8 +1,7 @@
 package com.codeforces.round9global
 
-/**
-  * C. Element Extermination
-  * https://codeforces.com/contest/1375/problem/C
+/** C. Element Extermination
+  * - https://codeforces.com/contest/1375/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

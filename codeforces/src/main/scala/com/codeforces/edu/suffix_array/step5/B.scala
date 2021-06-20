@@ -1,8 +1,7 @@
 package com.codeforces.edu.suffix_array.step5
 
-/**
-  * B. Longest Common Substring
-  * https://codeforces.com/edu/course/2/lesson/2/5/practice/contest/269656/problem/B
+/** B. Longest Common Substring
+  * - https://codeforces.com/edu/course/2/lesson/2/5/practice/contest/269656/problem/B
   */
 object B extends App {
 
@@ -16,7 +15,7 @@ object B extends App {
     val cs = Array.ofDim[Int](n)
 
     s.zipWithIndex.sortBy(_._1).zipWithIndex.foldLeft('$') {
-      case (_, ((curr, p), 0)) =>
+      case (_, ((curr, p), 0))    =>
         ps(0) = p
         cs(p) = 0
         curr
@@ -35,21 +34,20 @@ object B extends App {
       if (1 << iter > n) {
         val lcp = Array.ofDim[Int](n)
 
-        str.indices.foldLeft(0) {
-          case (k, i) =>
-            val pi = cs(i)
-            val pj = pi - 1
-            val j  = ps(pj)
+        str.indices.foldLeft(0) { case (k, i) =>
+          val pi = cs(i)
+          val pj = pi - 1
+          val j  = ps(pj)
 
-            @annotation.tailrec
-            def go(k: Int): Int = if (s(i + k) == s(j + k)) go(k + 1) else k
+          @annotation.tailrec
+          def go(k: Int): Int = if (s(i + k) == s(j + k)) go(k + 1) else k
 
-            lcp(pi) = go(0 max (k - 1))
-            lcp(pi)
+          lcp(pi) = go(0 max (k - 1))
+          lcp(pi)
         }
 
         val (from, length) = ps.indices.foldLeft((0, 0)) {
-          case (state, 0) => state
+          case (state, 0)                   => state
           case (state @ (from, length), pi) =>
             val pj     = pi - 1
             val (i, j) = (ps(pi), ps(pj))

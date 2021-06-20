@@ -1,22 +1,16 @@
 package com.codeforces.round93edu
 
-/**
-  * C. Good Subarrays
-  * https://codeforces.com/contest/1398/problem/C
-  *
-  * https://codeforces.com/blog/entry/81410?#comment-680498
-  * https://codeforces.com/blog/entry/81410?#comment-680824
+/** C. Good Subarrays https://codeforces.com/contest/1398/problem/C
+  * - https://codeforces.com/blog/entry/81410?#comment-680498
+  * -https://codeforces.com/blog/entry/81410?#comment-680824
   *
   * a_l + ... + a_r = r - l + 1
   *
-  * \sum\limits_{i=l}^r{a_i} = r - l + 1
-  * \sum\limits_{i=l}^r{a_i} - \sum\limits_{i=l}^r{1} = 0
-  * \sum\limits_{i=l}^r{a_i - 1} = 0
+  * \sum\limits_{i=l}^r{a_i} = r - l + 1 \sum\limits_{i=l}^r{a_i} - \sum\limits_{i=l}^r{1} = 0 \sum\limits_{i=l}^r{a_i -
+  * 1} = 0
   *
-  * Let b_i = a_i - 1
-  * \sum\limits_{i=l}^r{b_i} = 0
-  * prefix_sum(r) - prefix_sum(l - 1) = 0
-  * prefix_sum(r) = prefix_sum(l - 1)
+  * Let b_i = a_i - 1 \sum\limits_{i=l}^r{b_i} = 0 prefix_sum(r) - prefix_sum(l - 1) = 0 prefix_sum(r) = prefix_sum(l -
+  * 1)
   */
 object C extends App {
   import scala.io.StdIn._

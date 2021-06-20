@@ -1,8 +1,7 @@
 package com.codeforces.round645div2
 
-/**
-  * B. Maria Breaks the Self-isolation
-  * https://codeforces.com/contest/1358/problem/B
+/** B. Maria Breaks the Self-isolation
+  * - https://codeforces.com/contest/1358/problem/B
   */
 object B extends App {
   val t = scala.io.StdIn.readInt()

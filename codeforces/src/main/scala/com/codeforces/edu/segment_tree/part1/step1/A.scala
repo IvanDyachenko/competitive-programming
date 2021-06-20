@@ -1,8 +1,7 @@
 package com.codeforces.edu.segment_tree.part1.step1
 
-/**
-  * A. Segment Tree for the Sum
-  * https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A
+/** A. Segment Tree for the Sum
+  * - https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A
   */
 object A extends App {
   import scala.reflect.ClassTag

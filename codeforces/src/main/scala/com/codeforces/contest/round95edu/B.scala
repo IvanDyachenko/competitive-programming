@@ -1,8 +1,7 @@
 package com.codeforces.contest.round95edu
 
-/**
-  * B. Negative Prefixes
-  * https://codeforces.com/contest/1418/problem/B
+/** B. Negative Prefixes
+  * - https://codeforces.com/contest/1418/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

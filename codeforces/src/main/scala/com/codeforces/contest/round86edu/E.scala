@@ -1,8 +1,7 @@
 package com.codeforces.round86edu
 
-/**
-  * E. Placing Rooks
-  * https://codeforces.com/contest/1342/problem/E
+/** E. Placing Rooks
+  * - https://codeforces.com/contest/1342/problem/E
   */
 object E extends App {
   val MOD = 998244353
@@ -10,7 +9,7 @@ object E extends App {
   private lazy val factorials: Stream[Long] =
     0L #:: 1L #:: factorials.zipWithIndex.tail.map { case (f, i) => (f * i) % MOD }
 
-  private def factorial(i: Int): Long =
+  private def factorial(i: Int): Long       =
     factorials(i + 1)
 
   implicit class LongOps(val l: Long) extends AnyVal {

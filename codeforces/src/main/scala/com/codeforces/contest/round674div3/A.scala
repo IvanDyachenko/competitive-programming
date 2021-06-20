@@ -1,8 +1,7 @@
 package com.codeforces.contest.round674div3
 
-/**
-  * A. Floor Number
-  * https://codeforces.com/contest/1426/problem/A
+/** A. Floor Number
+  * - https://codeforces.com/contest/1426/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

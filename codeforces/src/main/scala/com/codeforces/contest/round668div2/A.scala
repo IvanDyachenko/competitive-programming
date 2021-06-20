@@ -1,8 +1,7 @@
 package com.codeforces.contest.round668div2
 
-/**
-  * A. Permutation Forgery
-  * https://codeforces.com/contest/1405/problem/A
+/** A. Permutation Forgery
+  * - https://codeforces.com/contest/1405/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

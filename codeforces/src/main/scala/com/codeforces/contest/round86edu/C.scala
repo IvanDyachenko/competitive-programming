@@ -1,8 +1,7 @@
 package com.codeforces.round86edu
 
-/**
-  * C. Yet Another Counting Problem
-  * https://codeforces.com/contest/1342/problem/C
+/** C. Yet Another Counting Problem
+  * - https://codeforces.com/contest/1342/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

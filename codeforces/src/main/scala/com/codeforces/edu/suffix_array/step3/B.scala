@@ -1,8 +1,7 @@
 package com.codeforces.edu.suffix_array.step3
 
-/**
-  * B. Counting Substrings
-  * https://codeforces.com/edu/course/2/lesson/2/3/practice/contest/269118/problem/B
+/** B. Counting Substrings
+  * - https://codeforces.com/edu/course/2/lesson/2/3/practice/contest/269118/problem/B
   */
 object B extends App {
   import scala.io.StdIn._
@@ -15,7 +14,7 @@ object B extends App {
     val cs = Array.ofDim[Int](n)
 
     s.zipWithIndex.sortBy(_._1).zipWithIndex.foldLeft('$') {
-      case (_, ((curr, p), 0)) =>
+      case (_, ((curr, p), 0))    =>
         ps(0) = p
         cs(p) = 0
         curr

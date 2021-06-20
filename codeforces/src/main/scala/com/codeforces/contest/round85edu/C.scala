@@ -1,8 +1,7 @@
 package com.codeforces.round85edu
 
-/**
-  * C. Circle of Monsters
-  * https://codeforces.com/contest/1334/problem/C
+/** C. Circle of Monsters
+  * - https://codeforces.com/contest/1334/problem/C
   */
 object C extends App {
   import scala.io.StdIn._
@@ -21,12 +20,11 @@ object C extends App {
       es(i) = e
     }
 
-    val (bs, b) = (0 until n).foldLeft((0L, Long.MaxValue)) {
-      case ((bs, b), i) =>
-        val j = if (i + 1 == n) 0 else i + 1
-        val a = hs(j) min es(i)
+    val (bs, b) = (0 until n).foldLeft((0L, Long.MaxValue)) { case ((bs, b), i) =>
+      val j = if (i + 1 == n) 0 else i + 1
+      val a = hs(j) min es(i)
 
-        (bs + hs(j) - a, b min a)
+      (bs + hs(j) - a, b min a)
     }
 
     val ans = bs + b

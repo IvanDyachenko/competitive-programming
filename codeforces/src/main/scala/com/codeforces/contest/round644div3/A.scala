@@ -1,8 +1,7 @@
 package com.codeforces.round644div3
 
-/**
-  * A. Minimal Square
-  * https://codeforces.com/contest/1360/problem/A
+/** A. Minimal Square
+  * - https://codeforces.com/contest/1360/problem/A
   */
 object A extends App {
   val t = scala.io.StdIn.readInt()

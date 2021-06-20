@@ -1,8 +1,7 @@
 package com.codeforces.round664div2
 
-/**
-  * C. Boboniu and Bit Operations
-  * https://codeforces.com/contest/1395/problem/C
+/** C. Boboniu and Bit Operations
+  * - https://codeforces.com/contest/1395/problem/C
   */
 object C extends App {
   import scala.io.StdIn._

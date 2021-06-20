@@ -1,8 +1,7 @@
 package com.codeforces.round85edu
 
-/**
-  * D. Minimum Euler Cycle
-  * https://codeforces.com/contest/1334/problem/D
+/** D. Minimum Euler Cycle
+  * - https://codeforces.com/contest/1334/problem/D
   */
 object D extends App {
   import scala.io.StdIn._
@@ -20,7 +19,7 @@ object D extends App {
           case (p, q) if i > n || p >= r => println()
           case _ if i == n               => println(1)
           case (_, q) if q < l           => go(i + 1, q)
-          case (p, q) =>
+          case (p, q)                    =>
             lazy val stream: Stream[Int] = i #:: (i + 1) #:: stream.zip(stream.tail).map {
               case (j, _) if j == i => i
               case (j, _)           => j + 1

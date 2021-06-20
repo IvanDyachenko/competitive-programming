@@ -1,8 +1,7 @@
 package com.codeforces.round88edu
 
-/**
-  * C. Mixing Water
-  * https://codeforces.com/contest/1359/problem/C
+/** C. Mixing Water
+  * - https://codeforces.com/contest/1359/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

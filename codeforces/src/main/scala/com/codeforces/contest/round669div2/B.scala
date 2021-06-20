@@ -1,15 +1,13 @@
 package com.codeforces.contest.round669div2
 
-/**
-  * B. Big Vova
-  * https://codeforces.com/contest/1407/problem/B
+/** B. Big Vova
+  * - https://codeforces.com/contest/1407/problem/B
   */
 object B extends App {
   import scala.io.StdIn._
 
   @annotation.tailrec
-  def gcd(a: Int, b: Int): Int =
-    if (b == 0) a else gcd(b, a % b)
+  def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 
   val t = readInt()
 
@@ -32,14 +30,13 @@ object B extends App {
     @annotation.tailrec
     def go(an: Seq[Int], bn: List[Int], c: Int): Seq[Int] = an match {
       case Seq() => bn
-      case _ =>
-        val (ak, bk, d) = an.foldLeft((List.empty[Int], List.empty[Int], 0)) {
-          case ((ak, bk, d), a) =>
-            val g = gcd(c, a)
+      case _     =>
+        val (ak, bk, d) = an.foldLeft((List.empty[Int], List.empty[Int], 0)) { case ((ak, bk, d), a) =>
+          val g = gcd(c, a)
 
-            if (g > d) (bk ::: ak, a :: Nil, g)
-            else if (g == d) (ak, a :: bk, d)
-            else (a :: ak, bk, d)
+          if (g > d) (bk ::: ak, a :: Nil, g)
+          else if (g == d) (ak, a :: bk, d)
+          else (a :: ak, bk, d)
         }
 
         go(ak, bn ::: bk, d)

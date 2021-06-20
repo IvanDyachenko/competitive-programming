@@ -1,8 +1,7 @@
 package com.codeforces.round645div2
 
-/**
-  * A. Park Lighting
-  * https://codeforces.com/contest/1358/problem/A
+/** A. Park Lighting
+  * - https://codeforces.com/contest/1358/problem/A
   */
 object A extends App {
   val t = scala.io.StdIn.readInt()

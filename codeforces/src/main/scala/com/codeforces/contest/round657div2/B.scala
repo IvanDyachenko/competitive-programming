@@ -1,8 +1,7 @@
 package com.codeforces.round657div2
 
-/**
-  * B. Dubious Cyrpto
-  * https://codeforces.com/contest/1379/problem/B
+/** B. Dubious Cyrpto
+  * - https://codeforces.com/contest/1379/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

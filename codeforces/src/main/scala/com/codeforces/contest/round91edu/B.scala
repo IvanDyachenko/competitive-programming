@@ -1,8 +1,7 @@
 package com.codeforces.round91edu
 
-/**
-  * B. Universal Solution
-  * https://codeforces.com/contest/1380/problem/B
+/** B. Universal Solution
+  * - https://codeforces.com/contest/1380/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

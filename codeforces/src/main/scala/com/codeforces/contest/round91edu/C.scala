@@ -1,8 +1,7 @@
 package com.codeforces.round91edu
 
-/**
-  * C. Create The Teams
-  * https://codeforces.com/contest/1380/problem/C
+/** C. Create The Teams
+  * - https://codeforces.com/contest/1380/problem/C
   */
 object C extends App {
   import scala.io.StdIn._
@@ -14,10 +13,9 @@ object C extends App {
     val an          = readLine().split(" ").map(_.toInt).sorted(Ordering.Int.reverse)
 
     val ans = an
-      .foldLeft((0, 0)) {
-        case ((count, remains), a) =>
-          if (a * (remains + 1) >= x) (count + 1, 0)
-          else (count, remains + 1)
+      .foldLeft((0, 0)) { case ((count, remains), a) =>
+        if (a * (remains + 1) >= x) (count + 1, 0)
+        else (count, remains + 1)
       }
       ._1
 

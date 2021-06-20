@@ -1,8 +1,7 @@
 package com.codeforces.round645div2
 
-/**
-  * C. Celex Update
-  * https://codeforces.com/contest/1358/problem/C
+/** C. Celex Update
+  * - https://codeforces.com/contest/1358/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

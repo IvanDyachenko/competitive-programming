@@ -1,8 +1,7 @@
 package com.codeforces.round93edu
 
-/**
-  * B. Substring Removal Game
-  * https://codeforces.com/contest/1398/problem/B
+/** B. Substring Removal Game
+  * - https://codeforces.com/contest/1398/problem/B
   */
 object B extends App {
   import scala.io.StdIn._

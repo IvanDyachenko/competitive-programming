@@ -1,8 +1,7 @@
 package com.codeforces.round665div2
 
-/**
-  * A. Distance and Axis
-  * https://codeforces.com/contest/1401/problem/A
+/** A. Distance and Axis
+  * - https://codeforces.com/contest/1401/problem/A
   */
 object A extends App {
   import scala.io.StdIn._

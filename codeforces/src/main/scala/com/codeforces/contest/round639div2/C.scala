@@ -1,8 +1,7 @@
 package com.codeforces.round639div2
 
-/**
-  * C. Hilbert's Hotel
-  * https://codeforces.com/contest/1345/problem/C
+/** C. Hilbert's Hotel
+  * - https://codeforces.com/contest/1345/problem/C
   */
 object C extends App {
   val t = scala.io.StdIn.readInt()

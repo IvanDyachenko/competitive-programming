@@ -5,14 +5,15 @@ ThisBuild / scalaVersion := scala2_13
 lazy val root = (project in file("."))
   .aggregate(atcoder, codeforces)
   .settings(
-    skip in publish := true,
+    publish / skip := true,
     scalafmtOnCompile := true,
     crossScalaVersions := Nil
   )
 
 lazy val atcoder = (project in file("atcoder"))
   .settings(
-    crossScalaVersions := List(scala2_13)
+    crossScalaVersions := List(scala2_13),
+    commonDependencies
   )
 
 lazy val codeforces = (project in file("codeforces"))

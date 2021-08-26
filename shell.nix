@@ -6,6 +6,7 @@ pkgs.stdenv.mkDerivation rec {
   buildInputs =
       [
         # Development
-        pkgs.metals-emacs
+        pkgs.emacsUnstable
+        pkgs.metals
       ];
 }

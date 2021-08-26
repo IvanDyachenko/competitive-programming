@@ -24,9 +24,8 @@ lazy val codeforces = (project in file("codeforces"))
 
 lazy val commonDependencies =
   libraryDependencies ++= List(
-    "org.scalactic" %% "scalactic" % scalacticVersion % "test",
-    "org.scalatest" %% "scalatest" % scalatestVersion % "test",
-    "org.scalatest" %% "scalatest-flatspec" % scalatestVersion % "test"
+    "org.scalameta" %% "munit"            % "0.7.27" % Test,
+    "org.scalameta" %% "munit-scalacheck" % "0.7.27" % Test
   )
 
 lazy val scala2_12 = "2.12.8"

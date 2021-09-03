@@ -3,7 +3,7 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := scala2_13
 
 lazy val root = (project in file("."))
-  .aggregate(atcoder, codeforces)
+  .aggregate(atcoder, codeforces, facebook)
   .settings(
     publish / skip := true,
     scalafmtOnCompile := true,
@@ -19,6 +19,12 @@ lazy val atcoder = (project in file("atcoder"))
 lazy val codeforces = (project in file("codeforces"))
   .settings(
     crossScalaVersions := List(scala2_12),
+    commonDependencies
+  )
+
+lazy val facebook = (project in file("facebook"))
+  .settings(
+    crossScalaVersions := List(scala2_13),
     commonDependencies
   )
 

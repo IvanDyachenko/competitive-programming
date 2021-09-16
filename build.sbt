@@ -28,6 +28,12 @@ lazy val facebook = (project in file("facebook"))
     commonDependencies
   )
 
+lazy val spoj = (project in file("spoj"))
+  .settings(
+    crossScalaVersions := List(scala2_12),
+    commonDependencies
+  )
+
 lazy val commonDependencies =
   libraryDependencies ++= List(
     "org.scalameta" %% "munit"            % "0.7.27" % Test,

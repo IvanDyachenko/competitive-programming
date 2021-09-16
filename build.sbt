@@ -3,7 +3,7 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := scala2_13
 
 lazy val root = (project in file("."))
-  .aggregate(atcoder, codeforces, facebook)
+  .aggregate(atcoder, codeforces, facebook, spoj)
   .settings(
     publish / skip := true,
     scalafmtOnCompile := true,

@@ -14,7 +14,7 @@ class CLOPPAIRSuite extends FunSuite {
       Point(9, 9)
     )
 
-    assertEquals(points.closest, Some((0, 1)))
+    assertEquals(points.closest, Some((1.0, 0, 1)))
   }
 
 }

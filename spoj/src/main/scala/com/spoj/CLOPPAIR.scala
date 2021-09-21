@@ -14,16 +14,18 @@ object CLOPPAIR extends App {
   }
 
   object Point {
+    type Result = (Double, Int, Int)
 
     implicit final class PointArrayOps(private val points: Array[Point]) extends AnyVal {
 
-      def closest: Option[(Int, Int)] = {
+      def closest: Option[Result] = {
         val byX = points.indices.sortBy(points)(orderingByX)
-        val byY = points.indices.sortBy(points)(orderingByX)
+        val byY = points.indices.sortBy(points)(orderingByY)
+
         closest(byX, byY)
       }
 
-      private[Point] def closest(byX: IndexedSeq[Int], byY: IndexedSeq[Int]): Option[(Int, Int)] =
+      private[Point] def closest(byX: IndexedSeq[Int], byY: IndexedSeq[Int]): Option[Result] =
         byX.length match {
           case l if l <= 3 => closestBruteForce(byX)
           case l           =>
@@ -42,41 +44,38 @@ object CLOPPAIR extends App {
             val gteqByX = byX.collect(gteq)
             val gteqByY = byY.collect(gteq)
 
-            val pairOpt = (closest(lteqByX, lteqByY), closest(gteqByX, gteqByY)) match {
-              case (lteqPairOpt @ Some(lteqPair), gteqPairOpt @ Some(gteqPair)) =>
-                val lteqDist = points(lteqPair._1) distance points(lteqPair._2)
-                val gteqDist = points(gteqPair._1) distance points(gteqPair._2)
-                if (lteqDist < gteqDist) lteqPairOpt else gteqPairOpt
-              case (pairOpt @ Some(_), _)                                       => pairOpt
-              case (_, pairOpt @ Some(_))                                       => pairOpt
-              case _                                                            => None
+            val resultOpt = (closest(lteqByX, lteqByY), closest(gteqByX, gteqByY)) match {
+              case (lteqResultOpt @ Some((lteqDist, _, _)), gteqResultOpt @ Some((gteqDist, _, _))) =>
+                if (lteqDist < gteqDist) lteqResultOpt else gteqResultOpt
+              case (resultOpt @ Some(_), _)                                                         => resultOpt
+              case (_, resultOpt @ Some(_))                                                         => resultOpt
+              case _                                                                                => None
             }
 
-            pairOpt.map { pair =>
-              val pairDist  = points(pair._1) distance points(pair._2)
-              val withinByY = byY.collect { case index if math.abs(points(index).x - at.x) <= pairDist => index }
+            resultOpt.map { case result @ (dist, _, _) =>
+              val withinByY = byY.collect { case index if math.abs(points(index).x - at.x) <= dist => index }
 
-              withinByY.indices.foldLeft(pair) { (pair, d) =>
-                ((d + 1) until (withinByY.length min (d + 8))).foldLeft(pair) { case (pair @ (a, b), c) =>
-                  val ab = points(a) distance points(b)
+              withinByY.indices.foldLeft(result) { (result, d) =>
+                ((d + 1) until (withinByY.length min (d + 8))).foldLeft(result) { case (result @ (ab, _, _), c) =>
                   val cd = points(c) distance points(d)
-                  if (cd < ab) (c, d) else pair
+                  if (cd < ab) (cd, c, d) else result
                 }
               }
             }
         }
 
-      private[Point] def closestBruteForce(indices: IndexedSeq[Int]): Option[(Int, Int)] =
-        indices.indices.foldLeft[Option[(Int, Int)]](None) { (pairOpt, di) =>
-          (0 until di).foldLeft(pairOpt) {
-            case (pairOpt @ Some((a, b)), ci) =>
-              val (c, d) = (indices(ci), indices(di))
-              val ab     = points(a) distance points(b)
-              val cd     = points(c) distance points(d)
-              if (cd < ab) Some((c, d)) else pairOpt
-            case (_, ci)                      =>
-              val (c, d) = (indices(ci), indices(di))
-              Some((c, d))
+      private[Point] def closestBruteForce(indices: IndexedSeq[Int]): Option[Result] =
+        indices.indices.foldLeft[Option[Result]](None) { (resultOpt, di) =>
+          val d = indices(di)
+
+          (0 until di).foldLeft(resultOpt) { (resultOpt, ci) =>
+            val c  = indices(ci)
+            val cd = points(c) distance points(d)
+
+            resultOpt match {
+              case Some((ab, _, _)) if cd >= ab => resultOpt
+              case _                            => Some((cd, c, d))
+            }
           }
         }
 
@@ -92,11 +91,10 @@ object CLOPPAIR extends App {
   val pn = Array.fill(n) { val Array(x, y) = nextInts(2); Point(x, y) }
 
   pn.closest match {
-    case Some((a, b)) =>
-      val ab = BigDecimal(pn(a) distance pn(b)).setScale(6, BigDecimal.RoundingMode.HALF_UP)
-      out.println(f"${a min b} ${a max b} $ab")
+    case Some((ab, a, b)) =>
+      out.println(f"${a min b} ${a max b} $ab%.6f")
       out.flush()
-    case _            =>
+    case _                =>
   }
 
   final object InOut {

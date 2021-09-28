@@ -1,12 +1,13 @@
-ThisBuild / name := "competitive-programming"
-ThisBuild / version := "0.1.0-SNAPSHOT"
+// scalafmt: { align.tokens.add = [ {code = ":=", owner = "Term.ApplyInfix"} ] }
+ThisBuild / name         := "competitive-programming"
+ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := scala2_13
 
 lazy val root = (project in file("."))
   .aggregate(atcoder, codeforces, facebook, spoj)
   .settings(
-    publish / skip := true,
-    scalafmtOnCompile := true,
+    publish / skip     := true,
+    scalafmtOnCompile  := true,
     crossScalaVersions := Nil
   )
 

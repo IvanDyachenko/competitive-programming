@@ -1,2 +1,2 @@
-[![wakatime](https://wakatime.com/badge/user/2870cc40-1906-40cf-a689-038f7da76820/project/f2fdfa02-1fd0-46e5-b62b-69a2d851ba2e.svg)](https://wakatime.com/badge/user/2870cc40-1906-40cf-a689-038f7da76820/project/f2fdfa02-1fd0-46e5-b62b-69a2d851ba2e) ![Scala CI](https://github.com/IvanDyachenko/competitive-programming/workflows/Scala%20CI/badge.svg?branch=master)
+[![wakatime](https://wakatime.com/badge/github/IvanDyachenko/competitive-programming.svg)](https://wakatime.com/badge/github/IvanDyachenko/competitive-programming) ![Scala CI](https://github.com/IvanDyachenko/competitive-programming/workflows/Scala%20CI/badge.svg?branch=master)
 # Competitive programming adventures 

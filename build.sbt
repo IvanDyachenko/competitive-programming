@@ -4,7 +4,7 @@ ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := scala2_13
 
 lazy val root = (project in file("."))
-  .aggregate(atcoder, codeforces, csacademy, facebook, spoj)
+  .aggregate(atcoder, codeforces, csacademy, facebook, spoj, yandex)
   .settings(
     publish / skip     := true,
     scalafmtOnCompile  := true,
@@ -41,6 +41,12 @@ lazy val spoj = (project in file("spoj"))
     commonDependencies
   )
 
+lazy val yandex = (project in file("yandex"))
+  .settings(
+    crossScalaVersions := List(scala2_13),
+    commonDependencies
+  )
+
 lazy val commonDependencies =
   libraryDependencies ++= List(
     "org.scalameta" %% "munit"            % "0.7.27" % Test,
@@ -48,7 +54,7 @@ lazy val commonDependencies =
   )
 
 lazy val scala2_12 = "2.12.8"
-lazy val scala2_13 = "2.13.1"
+lazy val scala2_13 = "2.13.4"
 
 lazy val scalacticVersion = "3.2.0"
 lazy val scalatestVersion = "3.2.0"

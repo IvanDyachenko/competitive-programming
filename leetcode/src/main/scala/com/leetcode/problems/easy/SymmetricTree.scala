@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** 101. Symmetric Tree
   * https://leetcode.com/problems/symmetric-tree/

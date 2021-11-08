@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** 228. Summary Ranges
   * https://leetcode.com/problems/summary-ranges/

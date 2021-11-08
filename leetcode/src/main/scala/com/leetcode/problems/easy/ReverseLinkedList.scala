@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** 206. Reverse Linked List
   * https://leetcode.com/problems/reverse-linked-list/

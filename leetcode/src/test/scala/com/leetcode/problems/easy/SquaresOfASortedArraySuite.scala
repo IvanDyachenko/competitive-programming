@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 import munit.FunSuite
 import SquaresOfASortedArray._

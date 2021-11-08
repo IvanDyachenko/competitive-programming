@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** 283. Move Zeroes
   * https://leetcode.com/problems/move-zeroes/

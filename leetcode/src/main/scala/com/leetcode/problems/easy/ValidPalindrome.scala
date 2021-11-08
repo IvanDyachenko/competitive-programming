@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** 125. Valid Palindrome
   * https://leetcode.com/problems/valid-palindrome/

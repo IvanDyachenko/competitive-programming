@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** 167. Two Sum II - Input Array Is Sorted
   * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/

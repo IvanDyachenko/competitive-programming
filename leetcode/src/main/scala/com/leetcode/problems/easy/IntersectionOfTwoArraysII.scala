@@ -1,4 +1,4 @@
-package com.leetcode.problems
+package com.leetcode.problems.easy
 
 /** Intersection of Two Arrays II
   * https://leetcode.com/problems/intersection-of-two-arrays-ii/

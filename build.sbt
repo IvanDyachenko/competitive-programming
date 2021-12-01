@@ -4,7 +4,7 @@ ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := scala2_13
 
 lazy val root = (project in file("."))
-  .aggregate(atcoder, codeforces, csacademy, facebook, spoj, yandex, leetcode)
+  .aggregate(atcoder, codeforces, csacademy, facebook, spoj, yandex, leetcode, adventofcode)
   .settings(
     publish / skip     := true,
     scalafmtOnCompile  := true,
@@ -48,6 +48,12 @@ lazy val yandex = (project in file("yandex"))
   )
 
 lazy val leetcode = (project in file("leetcode"))
+  .settings(
+    crossScalaVersions := List(scala2_13),
+    commonDependencies
+  )
+
+lazy val adventofcode = (project in file("adventofcode"))
   .settings(
     crossScalaVersions := List(scala2_13),
     commonDependencies

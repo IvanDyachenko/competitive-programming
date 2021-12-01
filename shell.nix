@@ -14,7 +14,7 @@ pkgs.stdenv.mkDerivation rec {
       [
         # Development
         pkgs.metals
-        pkgs.emacsUnstable
+        pkgs.scala-cli
 
         # Documentation
         pkgs.ditaa texliveCustom

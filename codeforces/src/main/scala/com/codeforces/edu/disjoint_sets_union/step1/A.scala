@@ -4,32 +4,85 @@ package com.codeforces.edu.disjoint_sets_union.step1
   * - https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/A
   */
 object A extends App {
-  import scala.collection.mutable
 
-  trait DisjointSet {
-    def get(u: Int): Int
-    def union(u: Int, v: Int): Unit
+  object immutable {
+    final case class DSU[A] private (parents: Map[A, A], ranks: Map[A, Int]) {
+      def get(a: A): Option[(A, DSU[A])] = parents.get(a).flatMap {
+        case p if a == p => Some((p, this))
+        case r           => get(r).map { case (p, DSU(ps, rs)) => (p, DSU(ps.updated(a, p), rs)) }
+      }
+
+      def union(a1: A, a2: A): Option[DSU[A]] =
+        for {
+          (p1, p2, dsu) <- parents(a1, a2)
+          (r1, r2)      <- dsu.ranks(p1, p2)
+        } yield (r1 compare r2) match {
+          case sign if sign < 0 => DSU(parents.updated(p1, p2), ranks)
+          case sign if sign > 0 => DSU(parents.updated(p2, p1), ranks)
+          case _                => DSU(parents.updated(p2, p1), ranks.updated(p1, r1 + 1))
+        }
+
+      private def ranks(a1: A, a2: A): Option[(Int, Int)] =
+        for {
+          r1 <- ranks.get(a1)
+          r2 <- ranks.get(a2)
+        } yield (r1, r2)
+
+      private def parents(a1: A, a2: A): Option[(A, A, DSU[A])] =
+        for {
+          (p1, dsu) <- get(a1)
+          (p2, dsu) <- dsu.get(a2)
+        } yield (p1, p2, dsu)
+    }
+
+    object DSU {
+      def apply[A](as: Set[A]): DSU[A] = {
+        val ranks   = (as zip Stream.continually(1)).toMap
+        val parents = (as zip as).toMap
+        DSU(parents, ranks)
+      }
+    }
   }
 
-  object DisjointSet {
-    def apply(n: Int) = new DisjointSet {
-      private[this] val ps = (0 until n).toArray
-      private[this] val ls = ps.map(v => mutable.UnrolledBuffer(v))
+  object mutable {
+    import scala.collection.mutable.Map
 
-      override def get(u: Int): Int = ps(u)
+    final case class DSU[A] private (parents: Map[A, A], ranks: Map[A, Int]) {
+      def get(a: A): Option[A] = parents.get(a).flatMap {
+        case p if a == p => Some(p)
+        case r           => get(r).map { p => parents.update(a, p); p }
+      }
 
-      override def union(u: Int, v: Int): Unit = {
-        val (pu, pv) = (ps(u), ps(v))
-
-        if (pu != pv) {
-          val (lu, lv) = (ls(pu), ls(pv))
-
-          if (lu.length > lv.length) union(v, u)
-          else {
-            lu.foreach(a => ps(a) = pv)
-            lv.concat(lu)
-          }
+      def union(a1: A, a2: A): Unit =
+        for {
+          (p1, p2) <- parents(a1, a2)
+          (r1, r2) <- ranks(p1, p2)
+        } yield (r1 compare r2) match {
+          case sign if sign < 0 => parents.update(p1, p2)
+          case sign if sign > 0 => parents.update(p2, p1)
+          case _                =>
+            parents.update(p2, p1)
+            ranks.update(p1, r1 + 1)
         }
+
+      private def ranks(a1: A, a2: A): Option[(Int, Int)] =
+        for {
+          r1 <- ranks.get(a1)
+          r2 <- ranks.get(a2)
+        } yield (r1, r2)
+
+      private def parents(a1: A, a2: A): Option[(A, A)] =
+        for {
+          p1 <- get(a1)
+          p2 <- get(a2)
+        } yield (p1, p2)
+    }
+
+    object DSU {
+      def apply[A](as: Set[A]): DSU[A] = {
+        val ranks   = Map(as.toSeq.map(_ -> 1): _*)
+        val parents = Map(as.toSeq.map(a => a -> a): _*)
+        DSU(parents, ranks)
       }
     }
   }
@@ -38,19 +91,24 @@ object A extends App {
 
   val Array(n, m) = nextInts(2)
 
-  val set = DisjointSet(n)
+  val dsu = mutable.DSU((1 to n).toSet)
 
   (0 until m).foreach { _ =>
-    nextLine().split(" ") match {
+    val command = nextLine().split(" ")
+
+    command match {
       case Array("get", u, v)   =>
-        val ans = if (set.get(u.toInt - 1) == set.get(v.toInt - 1)) "YES" else "NO"
-        out.println(ans)
-      case Array("union", u, v) => set.union(u.toInt - 1, v.toInt - 1)
+        for {
+          pu    <- dsu.get(u.toInt)
+          pv    <- dsu.get(v.toInt)
+          answer = if (pu == pv) "YES" else "NO"
+        } out.println(answer)
+      case Array("union", u, v) => dsu.union(u.toInt, v.toInt)
     }
   }
   out.flush()
 
-  final object InOut {
+  object InOut {
     import java.util.Scanner
 
     val in  = new java.io.BufferedReader(new java.io.InputStreamReader(System.in))
@@ -69,7 +127,7 @@ object A extends App {
 
     private[this] var tokenizer: java.util.StringTokenizer = _
 
-    def nextToken(): String = {
+    private[this] def nextToken(): String = {
       while (tokenizer == null || !tokenizer.hasMoreTokens())
         tokenizer = new java.util.StringTokenizer(in.readLine())
       tokenizer.nextToken()

@@ -14,7 +14,7 @@ object A extends App {
 
       def union(a1: A, a2: A): Option[DSU[A]] =
         for {
-          (p1, p2, dsu) <- parents(a1, a2)
+          (p1, p2, dsu) <- parents(a1, a2) if p1 != p2
           (r1, r2)      <- dsu.ranks(p1, p2)
         } yield (r1 compare r2) match {
           case sign if sign < 0 => DSU(parents.updated(p1, p2), ranks)
@@ -55,7 +55,7 @@ object A extends App {
 
       def union(a1: A, a2: A): Unit =
         for {
-          (p1, p2) <- parents(a1, a2)
+          (p1, p2) <- parents(a1, a2) if p1 != p2
           (r1, r2) <- ranks(p1, p2)
         } yield (r1 compare r2) match {
           case sign if sign < 0 => parents.update(p1, p2)
@@ -89,7 +89,8 @@ object A extends App {
 
   import InOut._
 
-  val Array(n, m) = nextInts(2)
+  val n = nextInt()
+  val m = nextInt()
 
   val dsu = mutable.DSU((1 to n).toSet)
 

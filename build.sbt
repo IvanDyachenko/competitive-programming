@@ -65,7 +65,7 @@ lazy val commonDependencies =
     "org.scalameta" %% "munit-scalacheck" % "0.7.29" % Test
   )
 
-lazy val scala2_12 = "2.12.8"
+lazy val scala2_12 = "2.12.15"
 lazy val scala2_13 = "2.13.4"
 
 lazy val scalacticVersion = "3.2.0"

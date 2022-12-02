@@ -13,6 +13,7 @@ pkgs.stdenv.mkDerivation rec {
     in
       [
         # Development
+        pkgs.sbt
         pkgs.metals
         pkgs.scala-cli
 

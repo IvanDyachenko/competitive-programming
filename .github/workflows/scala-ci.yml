@@ -16,7 +16,7 @@ jobs:
       uses: coursier/cache-action@v6.4
 
     - name: Cache sbt
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.ivy2/cache

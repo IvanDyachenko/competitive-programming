@@ -1,5 +1,6 @@
 bin = [
-  { name = "day01", path = "day01/part01.rs" },
+  { name = "day01-part01", path = "day01/part01.rs" },
+  { name = "day01-part02", path = "day01/part02.rs" },
 ]
 
 [package]

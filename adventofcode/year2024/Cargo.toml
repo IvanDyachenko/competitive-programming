@@ -1,0 +1,15 @@
+bin = [
+  { name = "day01", path = "day01/part01.rs" },
+]
+
+[package]
+name = "year2024"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lints.rust]
+unsafe_code = "forbid"
+unstable_features = "forbid"
+
+[dependencies]

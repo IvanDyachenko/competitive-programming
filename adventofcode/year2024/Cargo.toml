@@ -3,6 +3,8 @@ bin = [
   { name = "day01-part02", path = "day01/part02.rs" },
   { name = "day02-part01", path = "day02/part01.rs" },
   { name = "day02-part02", path = "day02/part02.rs" },
+  { name = "day03-part01", path = "day03/part01.rs" },
+  { name = "day03-part02", path = "day03/part02.rs" },
 ]
 
 [package]
@@ -16,3 +18,4 @@ unsafe_code = "forbid"
 unstable_features = "forbid"
 
 [dependencies]
+regex = "1.11.1"

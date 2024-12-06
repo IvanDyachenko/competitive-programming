@@ -1,0 +1,24 @@
+bin = [
+  { name = "2024-01-01", path = "year2024/day01/part01.rs" },
+  { name = "2024-01-02", path = "year2024/day01/part02.rs" },
+  { name = "2024-02-01", path = "year2024/day02/part01.rs" },
+  { name = "2024-02-02", path = "year2024/day02/part02.rs" },
+  { name = "2024-03-01", path = "year2024/day03/part01.rs" },
+  { name = "2024-03-02", path = "year2024/day03/part02.rs" },
+  { name = "2024-04-01", path = "year2024/day04/part01.rs" },
+  { name = "2024-04-02", path = "year2024/day04/part02.rs" },
+  { name = "2024-05-01", path = "year2024/day05/part01.rs" },
+  { name = "2024-05-02", path = "year2024/day05/part02.rs" },
+]
+
+[package]
+name = "adventofcode"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lints]
+workspace = true
+
+[dependencies]
+regex = "1.11.1"

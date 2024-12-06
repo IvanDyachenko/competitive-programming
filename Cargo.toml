@@ -1,0 +1,8 @@
+[workspace]
+name = "competitive-programming"
+resolver = "2"
+members = ["adventofcode"]
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unstable_features = "forbid"

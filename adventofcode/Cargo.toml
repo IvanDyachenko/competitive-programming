@@ -13,6 +13,8 @@ bin = [
   { name = "2024-06-02", path = "year2024/day06/part02.rs" },
   { name = "2024-07-01", path = "year2024/day07/part01.rs" },
   { name = "2024-07-02", path = "year2024/day07/part02.rs" },
+  { name = "2024-08-01", path = "year2024/day08/part01.rs" },
+  { name = "2024-08-02", path = "year2024/day08/part02.rs" },
 ]
 
 [package]

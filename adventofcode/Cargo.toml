@@ -23,8 +23,9 @@ version = "0.1.0"
 edition = "2021"
 publish = false
 
-[lints]
-workspace = true
+[lints.rust]
+unsafe_code = "forbid"
+unstable_features = "forbid"
 
 [dependencies]
 regex = "1.11.1"

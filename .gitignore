@@ -193,3 +193,12 @@ project/plugins/project/
 *.metals
 
 # End of https://www.gitignore.io/api/sbt,macos,scala,emacs,bloop,metals,intellij+all
+
+# sbt 2 and local editor state
+.bsp/
+.sbt/
+.scala-build/
+project/project/
+metals.sbt
+.vscode/mcp.json
+*.semanticdb

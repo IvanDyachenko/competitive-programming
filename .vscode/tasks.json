@@ -1,0 +1,123 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "cwd": "${workspaceFolder}"
+  },
+  "tasks": [
+    {
+      "label": "Check all",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Test Scala",
+        "Check Hello Interview Rust",
+        "Test Advent of Code Rust"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Scala",
+      "type": "process",
+      "command": "sbt",
+      "args": [
+        "verify"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Format Scala",
+      "type": "process",
+      "command": "sbt",
+      "args": [
+        "fmt"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Check Hello Interview Rust",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Check Hello Interview Rust formatting",
+        "Clippy Hello Interview Rust",
+        "Test Hello Interview Rust"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Hello Interview Rust",
+      "type": "process",
+      "command": "cargo",
+      "args": [
+        "test",
+        "--locked"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/hellointerview"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Format Hello Interview Rust",
+      "type": "process",
+      "command": "cargo",
+      "args": [
+        "fmt",
+        "--all"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/hellointerview"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Check Hello Interview Rust formatting",
+      "type": "process",
+      "command": "cargo",
+      "args": [
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/hellointerview"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clippy Hello Interview Rust",
+      "type": "process",
+      "command": "cargo",
+      "args": [
+        "clippy",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/hellointerview"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test Advent of Code Rust",
+      "type": "process",
+      "command": "cargo",
+      "args": [
+        "test",
+        "--all-targets",
+        "--locked"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/adventofcode"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

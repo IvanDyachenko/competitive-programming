@@ -1,0 +1,37 @@
+{
+  "files.watcherExclude": {
+    "**/target/**": true
+  },
+  "metals.javaVersion": "25",
+  "metals.testUserInterface": "Test Explorer",
+  "rust-analyzer.check.command": "clippy",
+  "[scala]": {
+    "editor.defaultFormatter": "scalameta.metals",
+    "editor.formatOnSave": true
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "*.scala": "scala",
+    "*.sbt": "scala"
+  },
+  "rust-analyzer.linkedProjects": [
+    "adventofcode/Cargo.toml",
+    "hellointerview/Cargo.toml"
+  ],
+  "metals.defaultBspToBuildTool": true,
+  "metals.serverProperties": [
+    "-Xmx2G",
+    "-XX:+UseZGC",
+    "-XX:ZUncommitDelay=30",
+    "-XX:ZCollectionInterval=5",
+    "-XX:+IgnoreUnrecognizedVMOptions",
+    "-Dmetals.macos-max-watch-roots=128"
+  ]
+}

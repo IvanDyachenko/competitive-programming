@@ -1,0 +1,60 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Hello Interview: tests in current file",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--locked"
+        ],
+        "cwd": "${workspaceFolder}/hellointerview",
+        "filter": {
+          "name": "hellointerview",
+          "kind": "lib"
+        }
+      },
+      "args": [
+        "${fileBasenameNoExtension}::tests::",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "cwd": "${workspaceFolder}/hellointerview",
+      "sourceLanguages": [
+        "rust"
+      ],
+      "terminal": "console"
+    },
+    {
+      "name": "Hello Interview: all tests",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--locked"
+        ],
+        "cwd": "${workspaceFolder}/hellointerview",
+        "filter": {
+          "name": "hellointerview",
+          "kind": "lib"
+        }
+      },
+      "args": [
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "cwd": "${workspaceFolder}/hellointerview",
+      "sourceLanguages": [
+        "rust"
+      ],
+      "terminal": "console"
+    }
+  ]
+}

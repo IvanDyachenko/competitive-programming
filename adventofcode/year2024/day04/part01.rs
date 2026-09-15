@@ -36,9 +36,7 @@ impl Grid {
                         let diagonal = [(i, j), (i - 1, j + 1), (i - 2, j + 2), (i - 3, j + 3)];
                         let count = count + self.is_xmas(diagonal);
                         let diagonal = [(i, j), (i + 1, j - 1), (i + 2, j - 2), (i + 3, j - 3)];
-                        let count = count + self.is_xmas(diagonal);
-
-                        count
+                        count + self.is_xmas(diagonal)
                     }
                     _ => count,
                 })

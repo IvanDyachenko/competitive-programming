@@ -202,3 +202,6 @@ project/project/
 metals.sbt
 .vscode/mcp.json
 *.semanticdb
+
+# Local agent sessions and runtime state
+.omc/

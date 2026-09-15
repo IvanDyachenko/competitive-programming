@@ -56,10 +56,10 @@ object B extends App {
             sc(p) = sc(q) + (if (prev == curr) 0 else 1)
         }
 
-        go(iter + 1, sp, sc)
+        go(iter + 1, sp.toIndexedSeq, sc.toIndexedSeq)
       }
 
-    go(0, ps, cs)
+    go(0, ps.toIndexedSeq, cs.toIndexedSeq)
   }
 
   val str     = readLine()

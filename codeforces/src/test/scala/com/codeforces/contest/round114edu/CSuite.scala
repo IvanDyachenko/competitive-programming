@@ -6,7 +6,7 @@ import C._
 class CSuite extends FunSuite {
 
   val heroes     = Array(3L, 6L, 2L, 3L)
-  lazy val coins = slayTheDragon(heroes)
+  lazy val coins = slayTheDragon(heroes.toIndexedSeq)
 
   test("Codeforces | Round #114 | Educational | C | 1 test case") {
     assertEquals(coins(3L, 12L), 1L)

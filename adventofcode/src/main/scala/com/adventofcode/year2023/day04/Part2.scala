@@ -34,7 +34,7 @@ object Part2 extends App {
     def apply: List[String] => Scratchcards = xs => Scratchcards(xs.map(Scratchcard(_)))
   }
 
-  val sources = scala.io.Source.fromResource("year2023/day04/input.txt").getLines.toList
+  val sources = scala.io.Source.fromResource("year2023/day04/input.txt").getLines().toList
   val answer  = Scratchcards(sources).total
 
   println(answer)

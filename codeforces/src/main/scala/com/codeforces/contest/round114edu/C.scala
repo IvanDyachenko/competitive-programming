@@ -42,7 +42,7 @@ object C extends App {
   val n  = nextInt()
   val hn = nextLongs(n)
 
-  lazy val coins = slayTheDragon(hn)
+  lazy val coins = slayTheDragon(hn.toIndexedSeq)
 
   val m = nextInt()
 

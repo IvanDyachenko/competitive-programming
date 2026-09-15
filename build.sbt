@@ -10,6 +10,8 @@ libraryDependencies ++= Seq(
 )
 scalafmtConfig := (LocalRootProject / baseDirectory).value / ".scalafmt.conf"
 
+Compile / packageBin / mainClass := None
+
 lazy val scala2 = "2.13.18"
 lazy val scala3 = "3.9.0"
 

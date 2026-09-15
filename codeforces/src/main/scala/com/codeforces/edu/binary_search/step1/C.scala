@@ -34,7 +34,7 @@ object C extends App {
   val queries     = readLine().split(" ").map(_.toInt)
 
   queries.foreach { elem =>
-    val ans = closestToTheRight(seq, elem) match {
+    val ans = closestToTheRight(seq.toIndexedSeq, elem) match {
       case Found(i)          => i + 1
       case InsertionPoint(i) => i + 1
     }

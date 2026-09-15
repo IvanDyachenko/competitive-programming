@@ -27,7 +27,7 @@ object B extends App {
     val n  = readInt()
     val an = readLine().split(" ").map(_.toInt)
 
-    swaps(an) match {
+    swaps(an.toIndexedSeq) match {
       case Some(count) => println(count)
       case None        => println(-1)
     }

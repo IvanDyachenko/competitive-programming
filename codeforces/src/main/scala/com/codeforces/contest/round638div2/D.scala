@@ -7,11 +7,14 @@ object D extends App {
   val t = scala.io.StdIn.readInt()
 
   private def days(n: Int): Seq[Int] = {
-    val ds = Stream.iterate(1)(_ << 1).takeWhile(_ << 1 < n + 1)
+    val ds = LazyList.iterate(1)(_ << 1).takeWhile(_ << 1 < n + 1)
 
     val d = n + 1 - (1 << ds.length)
 
-    (d +: ds).sorted.sliding(2).flatMap { case Seq(a, b) => Seq(b - a) }.toSeq
+    (d +: ds).sorted.sliding(2).flatMap {
+      case Seq(a, b) => Seq(b - a)
+      case values => throw new MatchError(values)
+    }.toSeq
   }
 
   (0 until t).foreach { _ =>

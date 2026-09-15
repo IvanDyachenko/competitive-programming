@@ -20,7 +20,7 @@ object B extends App {
     val x  = nextInt()
     val an = nextInts(n)
 
-    hemoseShopping(an, x) match {
+    hemoseShopping(an.toIndexedSeq, x) match {
       case true  => out.println("YES")
       case false => out.println("NO")
     }

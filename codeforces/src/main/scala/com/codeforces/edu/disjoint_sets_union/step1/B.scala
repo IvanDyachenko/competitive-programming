@@ -14,7 +14,7 @@ object B extends App {
   object Monoid {
     type MinMaxCount = (Int, Int, Int)
 
-    implicit val MinMaxCountMonoid = new Monoid[MinMaxCount] {
+    implicit val MinMaxCountMonoid: Monoid[MinMaxCount] = new Monoid[MinMaxCount] {
       val zero: MinMaxCount                         = (Int.MaxValue, Int.MinValue, 0)
       def combine(a1: MinMaxCount, a2: MinMaxCount) = (a1._1 min a2._1, a1._2 max a2._2, a1._3 + a2._3)
     }

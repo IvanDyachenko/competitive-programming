@@ -6,14 +6,14 @@ package com.codeforces.contest.round762div3
 object B extends App {
   val Upper = 1e9.toLong
 
-  val squares = Stream
+  val squares = LazyList
     .unfold(1L) { number =>
       val square = number * number
       Option.when(square <= Upper)(square -> (number + 1))
     }
     .toArray
 
-  val cubes = Stream
+  val cubes = LazyList
     .unfold(1L) { number =>
       val cube  = number * number * number
       val index = squares.binarySearch(cube)

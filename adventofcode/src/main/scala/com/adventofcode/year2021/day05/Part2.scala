@@ -22,8 +22,8 @@ object Part2 extends App {
 
       @annotation.tailrec
       def go(p1: Coordinate, p2: Coordinate): Unit = {
-        val dx = (p1._1 - p2._1).signum
-        val dy = (p1._2 - p2._2).signum
+        val dx = (p1._1 - p2._1).sign
+        val dy = (p1._2 - p2._2).sign
 
         data(p1._1)(p1._2) += 1
         if (p1 != p2) go((p1._1 - dx, p1._2 - dy), p2)

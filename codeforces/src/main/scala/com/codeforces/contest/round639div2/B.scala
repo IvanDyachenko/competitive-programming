@@ -7,7 +7,7 @@ object B extends App {
   val t = scala.io.StdIn.readInt()
 
   private def height(n: Long): Int =
-    (math.sqrt(24 * n + 1) - 1).toInt / 6
+    (math.sqrt((24 * n + 1).toDouble) - 1).toInt / 6
 
   private def cards(h: Int): Int =
     h * (3 * h + 1) / 2

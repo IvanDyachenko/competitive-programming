@@ -10,7 +10,7 @@ object ABoredom extends App {
   val an = readLine().split(" ").map(_.toInt)
 
   val ans = {
-    val counts = an.groupBy(identity).mapValues[Long](_.length)
+    val counts = an.groupBy(identity).view.mapValues[Long](_.length)
 
     (2 to an.max)
       .foldLeft((0L, counts.getOrElse(1, 0L))) { case ((faimin2, faimin1), ai) =>

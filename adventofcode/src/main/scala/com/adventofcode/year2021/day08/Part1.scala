@@ -136,8 +136,8 @@ object Part1 extends App {
   val result = source.foldLeft(0) { (count, line) =>
     val Array(patterns, segments) = line.split('|').map(_.split(" ").filter(_.nonEmpty).map(_.toSet))
 
-    val display = Display(patterns)
-    val digits  = display.digits(segments)
+    val display = Display(patterns.toIndexedSeq)
+    val digits  = display.digits(segments.toIndexedSeq)
 
     count + digits.length
   }

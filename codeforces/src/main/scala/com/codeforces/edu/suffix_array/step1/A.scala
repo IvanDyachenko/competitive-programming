@@ -26,7 +26,7 @@ object A extends App {
 
     @annotation.tailrec
     def go(iter: Int): Seq[Int] =
-      if (1 << iter > n) ps
+      if (1 << iter > n) ps.toIndexedSeq
       else {
         var sp = Array.ofDim[Int](n)
         var sc = Array.ofDim[Int](n)

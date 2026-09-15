@@ -56,7 +56,7 @@ object B extends App {
   val k  = nextInt()
   val tn = nextInts(n)
 
-  technicalDebt(x, k, tn) match {
+  technicalDebt(x, k, tn.toIndexedSeq) match {
     case Some(y) => out.println(y)
     case _       =>
   }

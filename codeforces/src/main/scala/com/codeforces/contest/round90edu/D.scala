@@ -30,7 +30,7 @@ object D extends App {
         val d1 = evens.zip(odds).map { case (e, o) => o - e }
         val d2 = odds.zip(evens.tail).map { case (o, e) => o - e }
 
-        val profit = 0L max kadane(d1) max kadane(d2)
+        val profit = 0L max kadane(d1.toIndexedSeq) max kadane(d2.toIndexedSeq)
 
         base + profit
     }

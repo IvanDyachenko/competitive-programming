@@ -86,10 +86,10 @@ object B extends App {
             sc(q) = sc(p) + (if (curr == prev) 0 else 1)
         }
 
-        go(iter + 1, sp, sc)
+        go(iter + 1, sp.toIndexedSeq, sc.toIndexedSeq)
       }
 
-    go(0, ps, cs)
+    go(0, ps.toIndexedSeq, cs.toIndexedSeq)
   }
 
   import scala.io.StdIn._

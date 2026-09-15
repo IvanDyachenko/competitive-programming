@@ -27,7 +27,7 @@ object SymmetricTree {
             case (null, _) | (_, null)                        => false
             case (node1, node2) if node1.value != node2.value => false
             case (node1, node2)                               =>
-              deque.append(node1.left, node2.right, node1.right, node2.left)
+              deque.appendAll(Seq(node1.left, node2.right, node1.right, node2.left))
               go
           }
         }

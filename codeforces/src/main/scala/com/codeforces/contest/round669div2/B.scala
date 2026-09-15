@@ -42,7 +42,7 @@ object B extends App {
         go(ak, bn ::: bk, d)
     }
 
-    val bn = go(an, List.empty[Int], 0)
+    val bn = go(an.toIndexedSeq, List.empty[Int], 0)
 
     println(bn.mkString(" "))
 

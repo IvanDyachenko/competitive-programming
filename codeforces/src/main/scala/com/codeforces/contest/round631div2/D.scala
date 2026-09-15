@@ -1,5 +1,7 @@
 package com.codeforces.round631div2
 
+import scala.language.implicitConversions
+
 /** D. Dreamoon Likes Sequences
   * - https://codeforces.com/contest/1330/problem/D https://codeforces.com/blog/entry/75559
   */
@@ -14,7 +16,7 @@ object D extends App {
   private def numberOfChoices(c: Case): Long = {
     val Case(d, m) = c
 
-    val r = Stream
+    val r = LazyList
       .iterate(0)(_ + 1)
       .takeWhile(i => (1 << i) <= d)
       .foldLeft(1L) { (acc, i) =>

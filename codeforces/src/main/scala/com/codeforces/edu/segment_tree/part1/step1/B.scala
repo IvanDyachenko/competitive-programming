@@ -79,7 +79,7 @@ object B extends App {
   val Array(n, m) = readLine().split(" ").map(_.toInt)
   val an          = readLine().split(" ").map(_.toInt)
 
-  val tree = SegmentTree(an: _*)(100000)(_ min _)
+  val tree = SegmentTree(an.toIndexedSeq: _*)(100000)(_ min _)
 
   (0 until m).foreach { _ =>
     readLine().split(" ") match {

@@ -1,5 +1,7 @@
 package com.codeforces.round632div2
 
+import scala.language.implicitConversions
+
 /** A. Little Artem
   * - https://codeforces.com/contest/1333/problem/A
   */

@@ -19,7 +19,7 @@ object A extends App {
     val n  = nextInt()
     val an = nextInts(n)
 
-    val count = era(an)
+    val count = era(an.toIndexedSeq)
 
     out.println(count)
   }

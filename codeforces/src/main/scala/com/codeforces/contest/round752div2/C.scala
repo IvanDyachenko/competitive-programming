@@ -27,7 +27,7 @@ object C extends App {
     val n  = nextInt()
     val an = nextInts(n)
 
-    divisibleConfusion(an) match {
+    divisibleConfusion(an.toIndexedSeq) match {
       case true  => out.println("YES")
       case false => out.println("NO")
     }

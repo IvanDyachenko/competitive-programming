@@ -15,7 +15,7 @@ object A extends App {
     val (h, l) = (an.min, an.max)
 
     val bn =
-      if (h.signum >= 0) Some(0 to l)
+      if (h.sign >= 0) Some(0 to l)
       else None
 
     bn match {

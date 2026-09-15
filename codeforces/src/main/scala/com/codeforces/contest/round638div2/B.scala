@@ -16,7 +16,7 @@ object B extends App {
     if (d > k) println(-1)
     else {
       val sub                    = ad ::: (1 to k).toList.diff(ad).take(k - d)
-      lazy val subs: Stream[Int] = sub.toStream #::: subs
+      lazy val subs: LazyList[Int] = sub.to(LazyList) #::: subs
 
       val ans = subs.take(k * n).toList
 

@@ -1,5 +1,7 @@
 package com.codeforces.round630div2
 
+import scala.language.implicitConversions
+
 /** A. Exercising Walk
   * - http://codeforces.com/contest/1332/problem/A
   */

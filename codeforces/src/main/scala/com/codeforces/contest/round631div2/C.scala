@@ -26,7 +26,7 @@ object C extends App {
   val Array(n, _) = scala.io.StdIn.readLine().split(" ").map(_.toInt)
   val ls          = scala.io.StdIn.readLine().split(" ").map(_.toInt)
 
-  val ps = colorize(n, ls)
+  val ps = colorize(n, ls.toIndexedSeq)
 
   println(ps.mkString(" "))
 }

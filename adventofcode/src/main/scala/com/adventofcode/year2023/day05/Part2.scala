@@ -113,7 +113,7 @@ object Part2 extends App {
       }
   }
 
-  val (seeds, almanac) = scala.io.Source.fromResource("year2023/day05/input.txt").getLines.toList match {
+  val (seeds, almanac) = scala.io.Source.fromResource("year2023/day05/input.txt").getLines().toList match {
     case seeds :: converters => Seeds(seeds) -> Almanac(converters)
     case _                   => throw new IllegalArgumentException
   }

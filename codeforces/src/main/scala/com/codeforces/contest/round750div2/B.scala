@@ -23,7 +23,7 @@ object B extends App {
     val n  = nextInt()
     val an = nextInts(n)
 
-    out.println(numberOfNearlyFull(an))
+    out.println(numberOfNearlyFull(an.toIndexedSeq))
   }
 
   out.flush()

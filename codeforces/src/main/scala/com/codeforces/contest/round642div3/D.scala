@@ -6,7 +6,7 @@ package com.codeforces.round642div3
 object D extends App {
   import scala.collection.mutable.TreeSet
 
-  implicit val ord = Ordering.by[(Int, Int), (Int, Int)] { case (l, r) => (l - r + 1, l) }
+  implicit val ord: Ordering[(Int, Int)] = Ordering.by[(Int, Int), (Int, Int)] { case (l, r) => (l - r + 1, l) }
 
   val t = scala.io.StdIn.readInt()
 

@@ -28,7 +28,7 @@ object D extends App {
     val n  = readInt()
     val an = readLine().split(" ").map(_.toInt)
 
-    val xk = replace(n, an)
+    val xk = replace(n, an.toIndexedSeq)
 
     println(xk.length)
     println(xk.mkString(" "))

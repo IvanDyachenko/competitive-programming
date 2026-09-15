@@ -6,7 +6,7 @@ package com.codeforces.contest.round739div3
 object A extends App {
   import scala.io.StdIn._
 
-  lazy val xn = Stream.iterate(1)(_ + 1).filterNot(x => x % 3 == 0 || x % 10 == 3)
+  lazy val xn = LazyList.iterate(1)(_ + 1).filterNot(x => x % 3 == 0 || x % 10 == 3)
 
   val t = readInt()
 

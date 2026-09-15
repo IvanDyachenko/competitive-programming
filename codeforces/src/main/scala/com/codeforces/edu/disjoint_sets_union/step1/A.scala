@@ -37,7 +37,7 @@ object A extends App {
 
     object DSU {
       def apply[A](as: Set[A]): DSU[A] = {
-        val ranks   = (as zip Stream.continually(1)).toMap
+        val ranks   = (as zip LazyList.continually(1)).toMap
         val parents = (as zip as).toMap
         DSU(parents, ranks)
       }

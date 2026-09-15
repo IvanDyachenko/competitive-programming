@@ -20,7 +20,7 @@ object D extends App {
           case _ if i == n               => println(1)
           case (_, q) if q < l           => go(i + 1, q)
           case (p, q)                    =>
-            lazy val stream: Stream[Int] = i #:: (i + 1) #:: stream.zip(stream.tail).map {
+            lazy val stream: LazyList[Int] = i #:: (i + 1) #:: stream.zip(stream.tail).map {
               case (j, _) if j == i => i
               case (j, _)           => j + 1
             }

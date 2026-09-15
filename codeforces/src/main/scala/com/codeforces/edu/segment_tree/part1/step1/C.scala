@@ -75,7 +75,7 @@ object C extends App {
   val Array(n, m) = readLine().split(" ").map(_.toInt)
   val an          = readLine().split(" ").map(_.toInt -> 1)
 
-  val tree = SegmentTree[(Int, Int)](an: _*)((1000000000, 1)) {
+  val tree = SegmentTree[(Int, Int)](an.toIndexedSeq: _*)((1000000000, 1)) {
     case ((a, acount), (b, bcount)) if a == b  => (a, acount + bcount)
     case (left @ (a, acount), (b, _)) if a < b => left
     case (_, right)                            => right

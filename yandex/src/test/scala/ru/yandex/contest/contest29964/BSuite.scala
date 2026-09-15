@@ -11,7 +11,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 12
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(27L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(27L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 2 test") {
@@ -19,7 +19,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 11
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(26L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(26L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 3 test") {
@@ -27,7 +27,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 10
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(24L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(24L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 4 test") {
@@ -35,7 +35,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 9
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(22L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(22L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 5 test") {
@@ -43,7 +43,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 8
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(20L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(20L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 6 test") {
@@ -51,7 +51,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 7
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(19L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(19L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 7 test") {
@@ -59,7 +59,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 6
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(17L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(17L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 8 test") {
@@ -67,7 +67,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 5
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(15L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(15L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 9 test") {
@@ -75,7 +75,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 4
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(13L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(13L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 10 test") {
@@ -83,7 +83,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 3
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(12L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(12L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 11 test") {
@@ -91,7 +91,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 2
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(8L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(8L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 12 test") {
@@ -99,7 +99,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 1
     val deadlines = Array(5, 8, 13, 17, 22)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(5L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(5L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 13 test") {
@@ -107,7 +107,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 4
     val deadlines = Array(3)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(9L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(9L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 14 test") {
@@ -115,7 +115,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 3
     val deadlines = Array(3)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(7L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(7L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 15 test") {
@@ -123,7 +123,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 2
     val deadlines = Array(3)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(5L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(5L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 16 test") {
@@ -131,7 +131,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 1
     val deadlines = Array(3)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(3L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(3L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 17 test") {
@@ -139,7 +139,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 7
     val deadlines = Array(41, 45, 33, 9, 38)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(41L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(41L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 18 test") {
@@ -147,7 +147,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 1000000000
     val deadlines = (1 to 100000).toArray
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(99990100000L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(99990100000L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 19 test") {
@@ -155,7 +155,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 1000000000
     val deadlines = (1 to 100000).toArray
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(1000000000L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(1000000000L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 20 test") {
@@ -163,7 +163,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 10
     val deadlines = Array(1, 2, 3, 4, 5, 6)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(10L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(10L))
   }
 
   test("Yandex | Weekend Offer Backend | November 2021 | B | 21 test") {
@@ -171,7 +171,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
     val clicks    = 12
     val deadlines = Array(5, 22, 17, 13, 8)
 
-    assertEquals(technicalDebt(period, clicks, deadlines), Some(27L))
+    assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), Some(27L))
   }
 
 
@@ -194,7 +194,7 @@ class BSuite extends FunSuite with ScalaCheckSuite {
 
     Prop.forAllNoShrink(inputGen) { case (period, clicks, days) =>
       val deadlines = days.toArray
-      assertEquals(technicalDebt(period, clicks, deadlines), technicalDebtNaive(period, clicks, deadlines))
+      assertEquals(technicalDebt(period, clicks, deadlines.toIndexedSeq), technicalDebtNaive(period, clicks, deadlines.toIndexedSeq))
     }
 
   }

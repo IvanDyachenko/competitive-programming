@@ -12,7 +12,7 @@ object B extends App {
     val bn = scala.io.StdIn.readLine().split(" ").map(_.toInt)
 
     val bs  = bn.sum
-    val ans = bn.sum > 0 && bn.sum < bn.length || (an, an.tail).zipped.forall(_ <= _)
+    val ans = bn.sum > 0 && bn.sum < bn.length || an.lazyZip(an.tail).forall(_ <= _)
 
     if (ans) println("Yes")
     else println("No")

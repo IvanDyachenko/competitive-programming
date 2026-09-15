@@ -1,5 +1,7 @@
 package com.codeforces.round85edu
 
+import scala.language.implicitConversions
+
 /** A. Level Statistics
   * - https://codeforces.com/contest/1334/problem/A
   */

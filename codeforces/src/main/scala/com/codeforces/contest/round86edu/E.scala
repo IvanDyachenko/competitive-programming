@@ -6,7 +6,7 @@ package com.codeforces.round86edu
 object E extends App {
   val MOD = 998244353
 
-  private lazy val factorials: Stream[Long] =
+  private lazy val factorials: LazyList[Long] =
     0L #:: 1L #:: factorials.zipWithIndex.tail.map { case (f, i) => (f * i) % MOD }
 
   private def factorial(i: Int): Long       =

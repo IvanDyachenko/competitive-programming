@@ -16,7 +16,7 @@ object B extends App {
     val n  = nextInt()
     val an = nextInts(n)
 
-    xorSpeciaLISt(an) match {
+    xorSpeciaLISt(an.toIndexedSeq) match {
       case true  => out.println("YES")
       case false => out.println("NO")
     }

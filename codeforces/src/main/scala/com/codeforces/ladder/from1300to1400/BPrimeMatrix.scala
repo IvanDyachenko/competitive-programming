@@ -22,7 +22,7 @@ object BPrimeMatrix extends App {
   }
 
   val primes = {
-    lazy val primes       = 2 #:: Stream.iterate(3)(_ + 2).filter(p)
+    lazy val primes       = 2 #:: LazyList.iterate(3)(_ + 2).filter(p)
     def p: Int => Boolean = number => primes.takeWhile(prime => prime * prime <= number).forall(number % _ != 0)
     primes.take(10000).toArray
   }

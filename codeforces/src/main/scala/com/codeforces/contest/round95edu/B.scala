@@ -18,6 +18,7 @@ object B extends App {
       .foldRight((List.empty[Int], 0)) {
         case ((a, 1), (ck, i)) => (a :: ck, i)
         case ((_, 0), (ck, i)) => (bn(i) :: ck, i + 1)
+        case state => throw new MatchError(state)
       }
       ._1
 

@@ -34,7 +34,7 @@ object B extends App {
   val queries     = readLine().split(" ").map(_.toInt)
 
   queries.foreach { elem =>
-    val ans = closestToTheLeft(seq, elem) match {
+    val ans = closestToTheLeft(seq.toIndexedSeq, elem) match {
       case Found(i)          => i + 1
       case InsertionPoint(i) => i + 1
     }

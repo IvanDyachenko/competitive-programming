@@ -9,7 +9,7 @@ object CLOPPAIR extends App {
     def distance(that: Point): Double = {
       val xDelta = (x - that.x).toLong
       val yDelta = (y - that.y).toLong
-      math.sqrt(xDelta * xDelta + yDelta * yDelta)
+      math.sqrt((xDelta * xDelta + yDelta * yDelta).toDouble)
     }
   }
 

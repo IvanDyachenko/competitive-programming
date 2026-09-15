@@ -55,10 +55,10 @@ object A extends App {
             sc(p) = sc(q) + (if (curr == prev) 0 else 1)
         }
 
-        go(iter + 1, sp, sc)
+        go(iter + 1, sp.toIndexedSeq, sc.toIndexedSeq)
       }
 
-    go(0, ps, cs)
+    go(0, ps.toIndexedSeq, cs.toIndexedSeq)
   }
 
   val str   = readLine()
@@ -81,7 +81,7 @@ object A extends App {
         val shift    = suffs(midpoint)
         val prefix   = str.slice(shift, shift + subStrLen)
 
-        subStr.compare(prefix).signum match {
+        subStr.compare(prefix).sign match {
           case 0 | 1 => search(midpoint, right)
           case _     => search(left, midpoint)
         }

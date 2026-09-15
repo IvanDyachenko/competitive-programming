@@ -10,7 +10,7 @@ object A extends App {
 
   (0 until t).foreach { _ =>
     val b = readLine()
-    val a = b.head + b.indices.tail.by(2).map(b).mkString
+    val a = b.head.toString + b.indices.tail.by(2).map(b).mkString
 
     println(a)
   }

@@ -9,7 +9,7 @@ object A extends App {
   (0 until t).foreach { _ =>
     val Array(n, k) = scala.io.StdIn.readLine().split(" ").map(_.toInt)
 
-    val r = n + 2 * 0.max(k - 1) + (2 #:: Stream.iterate(3)(_ + 2)).find(n % _ == 0).get
+    val r = n + 2 * 0.max(k - 1) + (2 #:: LazyList.iterate(3)(_ + 2)).find(n % _ == 0).get
 
     println(r)
   }

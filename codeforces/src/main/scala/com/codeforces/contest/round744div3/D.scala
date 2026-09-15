@@ -35,7 +35,7 @@ object D extends App {
     val n  = nextInt()
     val pn = nextInts(n)
 
-    val ts = productiveMeeting(pn)
+    val ts = productiveMeeting(pn.toIndexedSeq)
 
     out.println(ts.length)
     ts.foreach { case (i, j) => out.println(s"${i + 1} ${j + 1}") }

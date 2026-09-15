@@ -21,6 +21,6 @@ object A extends App {
     val n  = readInt()
     val sn = readLine().split("").map(_.toInt)
 
-    println(countdown(sn))
+    println(countdown(sn.toIndexedSeq))
   }
 }

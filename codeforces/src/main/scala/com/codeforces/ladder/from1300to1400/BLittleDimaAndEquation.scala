@@ -13,7 +13,7 @@ object BLittleDimaAndEquation extends App {
   // 0<x<10^9 -> 1<=s(x)<=81
 
   val ans = (1 to 81).map { sx =>
-    val x = b * math.pow(sx, a).toLong + c
+    val x = b * math.pow(sx, a.toDouble).toLong + c
     (x, sx)
   }.filter { case (x, _) => 0L < x && x < 1000000000L }.collect {
     case (x, sx) if sx == x.toString.map(_ - '0').sum => x

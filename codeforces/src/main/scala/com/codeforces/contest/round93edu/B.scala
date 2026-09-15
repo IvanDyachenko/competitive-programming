@@ -16,6 +16,7 @@ object B extends App {
         case (0 :: xs, '0') => 0 :: xs
         case (xs, '0')      => 0 :: xs
         case (x :: xs, '1') => (x + 1) :: xs
+        case state => throw new MatchError(state)
       }
       .sorted(Ordering.Int.reverse)
       .zipWithIndex

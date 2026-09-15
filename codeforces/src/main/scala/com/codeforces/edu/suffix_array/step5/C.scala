@@ -75,7 +75,7 @@ object C extends App {
           lcp(pi)
         }
 
-        val st = SparseTable(lcp: _*)(Int.MaxValue)(_ min _)
+        val st = SparseTable(lcp.toIndexedSeq: _*)(Int.MaxValue)(_ min _)
 
         def binarySearch(j: Int, size: Int): Int = {
 
@@ -126,10 +126,10 @@ object C extends App {
             sc(q) = sc(p) + (if (curr == prev) 0 else 1)
         }
 
-        go(iter + 1, sp, sc)
+        go(iter + 1, sp.toIndexedSeq, sc.toIndexedSeq)
       }
 
-    go(0, ps, cs)
+    go(0, ps.toIndexedSeq, cs.toIndexedSeq)
   }
 
   import InOut._
@@ -141,7 +141,7 @@ object C extends App {
     (l - 1, r - 1)
   }
 
-  val ans = sort(s, lrs)
+  val ans = sort(s, lrs.toIndexedSeq)
 
   ans.foreach { case (l, r) => out.println(s"${l + 1} ${r + 1}") }
   out.flush()

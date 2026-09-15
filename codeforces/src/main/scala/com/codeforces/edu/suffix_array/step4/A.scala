@@ -40,7 +40,7 @@ object A extends App {
           lcp(pi - 1)
         }
 
-        (ps, lcp)
+        (ps, lcp.toIndexedSeq)
       } else {
         val sp = Array.ofDim[Int](n)
         val sc = Array.ofDim[Int](n)
@@ -70,10 +70,10 @@ object A extends App {
             sc(q) = sc(p) + (if (prev == curr) 0 else 1)
         }
 
-        go(iter + 1, sp, sc)
+        go(iter + 1, sp.toIndexedSeq, sc.toIndexedSeq)
       }
 
-    go(0, ps, cs)
+    go(0, ps.toIndexedSeq, cs.toIndexedSeq)
   }
 
   import InOut._

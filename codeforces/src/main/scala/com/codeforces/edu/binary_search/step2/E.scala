@@ -9,7 +9,7 @@ object E extends App {
   val eps = 1e-6
   val c   = readDouble()
 
-  def f(x: Double): Int = (x * x + math.sqrt(x) - c).signum
+  def f(x: Double): Int = (x * x + math.sqrt(x) - c).sign.toInt
 
   def binarySearch(left: Double, right: Double, iter: Int): Double =
     if ((left - right).abs <= eps || iter > 60) right
@@ -25,14 +25,14 @@ object E extends App {
 
   def overhead = {
     @annotation.tailrec
-    def go(x: Long): Long = f(x) match {
+    def go(x: Long): Long = f(x.toDouble) match {
       case -1 | 0 => go(x << 1)
       case 1      => x
     }
     go(1)
   }
 
-  val ans = binarySearch(0, overhead, 0)
+  val ans = binarySearch(0, overhead.toDouble, 0)
 
   println(ans)
 }

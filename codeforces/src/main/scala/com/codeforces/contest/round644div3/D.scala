@@ -10,7 +10,7 @@ object D extends App {
     val Array(n, k) = scala.io.StdIn.readLine().split(" ").map(_.toLong)
 
     val ans = n / math
-      .sqrt(n)
+      .sqrt(n.toDouble)
       .toLong
       .to(1, -1)
       .collect {

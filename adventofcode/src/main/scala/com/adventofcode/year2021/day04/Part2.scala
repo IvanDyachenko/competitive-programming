@@ -44,7 +44,7 @@ object Part2 extends App {
       val grid = input.flatMap { line =>
         line.split(" ").collect { case str if str.nonEmpty => str.toInt }
       }.toArray
-      Board(grid)
+      Board(grid.toIndexedSeq)
     }
   }
 

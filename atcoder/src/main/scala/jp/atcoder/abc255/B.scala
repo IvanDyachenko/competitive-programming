@@ -28,7 +28,7 @@ object Main extends App {
     (u, v)
   }
 
-  starOrNot(edges) match {
+  starOrNot(edges.toIndexedSeq) match {
     case true  => out.println("Yes")
     case false => out.println("No")
   }

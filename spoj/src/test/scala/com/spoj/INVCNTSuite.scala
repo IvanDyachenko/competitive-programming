@@ -34,7 +34,7 @@ class INVCNTSuite extends FunSuite with ScalaCheckSuite {
 
     Prop.forAll(Gen.listOf[Int](Gen.choose(1, 1000000000))) { (an: List[Int]) =>
       val bn = an.toArray
-      assertEquals(bn.numberOfInversions, numberOfInversionsNaive(bn))
+      assertEquals(bn.numberOfInversions, numberOfInversionsNaive(bn.toIndexedSeq))
     }
   }
 }

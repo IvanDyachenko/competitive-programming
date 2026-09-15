@@ -13,7 +13,7 @@ object C extends App {
     val ans =
       if (s(0) != s(k - 1) || k == n) s(k - 1).toString
       else if (s(k) != s(n - 1)) s(0).toString + s.slice(k, n)
-      else s(0) + s(k).toString * ((n - 1) / k)
+      else s(0).toString + s(k).toString * ((n - 1) / k)
 
     println(ans)
   }

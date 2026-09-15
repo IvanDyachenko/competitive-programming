@@ -11,7 +11,7 @@ object A extends App {
   (0 until t).foreach { _ =>
     val Array(a, b, n) = readLine().split(" ").map(_.toInt)
 
-    lazy val fibs: Stream[(Int, Int)] = (0, 0) #:: (1, 1) #:: (fibs zip fibs.tail).map { case ((a, _), (b, i)) =>
+    lazy val fibs: LazyList[(Int, Int)] = (0, 0) #:: (1, 1) #:: (fibs zip fibs.tail).map { case ((a, _), (b, i)) =>
       (a + b, i + 1)
     }
 

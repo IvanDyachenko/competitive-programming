@@ -32,7 +32,7 @@ object B extends App {
     val n  = readInt()
     val an = readLine().split(" ").map(_.toInt)
 
-    val shifts = shiftingSort(an)
+    val shifts = shiftingSort(an.toIndexedSeq)
 
     println(shifts.length)
     println(shifts.map { case (l, r, d) => s"${l + 1} ${r + 1} $d" }.mkString("\n"))

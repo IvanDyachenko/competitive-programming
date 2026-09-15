@@ -79,7 +79,7 @@ object B extends App {
   val Array(n, m) = nextInts(2)
   val an          = nextInts(n)
 
-  val tree = SegmentTree(an: _*)(0)(_ + _)
+  val tree = SegmentTree(an.toIndexedSeq: _*)(0)(_ + _)
 
   (0 until m).foreach { _ =>
     nextInts(2) match {

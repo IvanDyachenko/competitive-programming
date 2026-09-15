@@ -6,8 +6,8 @@ package com.codeforces.ladder.from0to1300
 object APanoramixsPrediction extends App {
   import scala.io.StdIn._
 
-  lazy val primes: Stream[Int] =
-    2 #:: Stream.iterate(3)(_ + 2).filter(isPrime)
+  lazy val primes: LazyList[Int] =
+    2 #:: LazyList.iterate(3)(_ + 2).filter(isPrime)
 
   def isPrime(number: Int): Boolean = primes.takeWhile(prime => prime * prime <= number).forall(number % _ != 0)
 

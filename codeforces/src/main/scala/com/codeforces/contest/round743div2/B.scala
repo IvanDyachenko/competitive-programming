@@ -30,7 +30,7 @@ object B extends App {
     val an = nextInts(n)
     val bn = nextInts(n)
 
-    out.println(swaps(an, bn))
+    out.println(swaps(an.toIndexedSeq, bn.toIndexedSeq))
     out.flush()
   }
 

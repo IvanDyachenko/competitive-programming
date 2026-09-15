@@ -82,7 +82,7 @@ object A extends App {
 
   val bn = an.map(f)
 
-  val tree = SegmentTree(bn: _*)((0L, 0L, 0L, 0L)) { case ((aseg, asum, apref, asuf), (bseg, bsum, bpref, bsuf)) =>
+  val tree = SegmentTree(bn.toIndexedSeq: _*)((0L, 0L, 0L, 0L)) { case ((aseg, asum, apref, asuf), (bseg, bsum, bpref, bsuf)) =>
     (aseg max bseg max (asuf + bpref), asum + bsum, apref max (asum + bpref), bsuf max (bsum + asuf))
   }
 

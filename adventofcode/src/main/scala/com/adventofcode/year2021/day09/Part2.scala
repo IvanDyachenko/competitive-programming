@@ -121,7 +121,7 @@ object Part2 extends App {
       Heightmap(rows, columns, heights)
     }
 
-    implicit val SizeMonoid = new Monoid[Int] {
+    implicit val SizeMonoid: Monoid[Int] = new Monoid[Int] {
       val zero: Int                      = 0
       def combine(a1: Int, a2: Int): Int = a1 + a2
     }

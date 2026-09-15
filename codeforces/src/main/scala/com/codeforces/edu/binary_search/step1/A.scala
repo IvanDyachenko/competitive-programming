@@ -29,7 +29,7 @@ object A extends App {
   val queries     = readLine().split(" ").map(_.toInt)
 
   queries.foreach { elem =>
-    val ans = binarySearch(seq, elem) match {
+    val ans = binarySearch(seq.toIndexedSeq, elem) match {
       case Found(_) => "YES"
       case _        => "NO"
     }

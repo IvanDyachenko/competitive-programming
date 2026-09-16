@@ -2,3 +2,5 @@
 -Xmx2g
 -Dfile.encoding=UTF-8
 -Dsbt.supershell=false
+# Keep BSP launchers independent of versioned package-manager paths.
+-Dsbt.script=sbt

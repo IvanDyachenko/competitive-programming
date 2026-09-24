@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [adventofcode, hellointerview]
+        project: [adventofcode, hellointerview, leetcode/rust]
     defaults:
       run:
         working-directory: ${{ matrix.project }}
@@ -29,9 +29,9 @@ jobs:
         run: cargo build --all-targets --locked
       - name: Run tests
         run: cargo test --all-targets --locked
-      - name: Check Hello Interview formatting
-        if: matrix.project == 'hellointerview'
+      - name: Check Rust formatting
+        if: matrix.project != 'adventofcode'
         run: cargo fmt --all -- --check
-      - name: Lint Hello Interview
-        if: matrix.project == 'hellointerview'
+      - name: Lint Rust
+        if: matrix.project != 'adventofcode'
         run: cargo clippy --all-targets --locked -- -D warnings

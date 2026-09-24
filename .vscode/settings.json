@@ -23,7 +23,8 @@
   },
   "rust-analyzer.linkedProjects": [
     "adventofcode/Cargo.toml",
-    "hellointerview/Cargo.toml"
+    "hellointerview/Cargo.toml",
+    "leetcode/rust/Cargo.toml"
   ],
   "metals.defaultBspToBuildTool": true,
   "metals.serverProperties": [

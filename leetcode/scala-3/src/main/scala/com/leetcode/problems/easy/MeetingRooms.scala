@@ -4,5 +4,5 @@ package com.leetcode.problems.easy
 // https://leetcode.com/problems/meeting-rooms/
 // https://www.hellointerview.com/learn/code/intervals/can-attend-meetings
 object MeetingRooms {
-  // Implement the solution here.
+  def canAttendMeetings(intervals: Array[Array[Int]]): Boolean = ???
 }

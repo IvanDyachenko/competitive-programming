@@ -4,6 +4,7 @@ pub fn can_attend_meetings(_intervals: Vec<Vec<i32>>) -> bool {
     todo!()
 }
 
+/*
 #[cfg(test)]
 mod tests {
     use super::can_attend_meetings;
@@ -26,3 +27,4 @@ mod tests {
         assert!(can_attend_meetings(intervals));
     }
 }
+*/

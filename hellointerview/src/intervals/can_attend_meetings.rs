@@ -1,10 +1,21 @@
 // https://www.hellointerview.com/learn/code/intervals/can-attend-meetings
 
-pub fn can_attend_meetings(_intervals: Vec<Vec<i32>>) -> bool {
-    todo!()
+pub fn can_attend_meetings(mut intervals: Vec<Vec<i32>>) -> bool {
+    if intervals.is_empty() {
+        return true;
+    }
+
+    intervals.sort_by(|a, b| a[0].cmp(&b[0]));
+
+    for i in 1..intervals.len() {
+        if intervals[i][0] < intervals[i - 1][1] {
+            return false;
+        }
+    }
+
+    true
 }
 
-/*
 #[cfg(test)]
 mod tests {
     use super::can_attend_meetings;
@@ -27,4 +38,3 @@ mod tests {
         assert!(can_attend_meetings(intervals));
     }
 }
-*/

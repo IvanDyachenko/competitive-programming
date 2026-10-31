@@ -5,14 +5,18 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
-pub fn is_palindrome(_head: Option<Box<ListNode>>) -> bool {
-    todo!()
+pub struct Solution;
+
+impl Solution {
+    pub fn is_palindrome(_head: Option<Box<ListNode>>) -> bool {
+        todo!()
+    }
 }
 
 /*
 #[cfg(test)]
 mod tests {
-    use super::{ListNode, is_palindrome};
+    use super::{ListNode, Solution};
 
     fn list(values: &[i32]) -> Option<Box<ListNode>> {
         values.iter().rev().fold(None, |next, &val| {
@@ -22,17 +26,17 @@ mod tests {
 
     #[test]
     fn palindrome() {
-        assert!(is_palindrome(list(&[5, 4, 3, 4, 5])));
+        assert!(Solution::is_palindrome(list(&[5, 4, 3, 4, 5])));
     }
 
     #[test]
     fn not_palindrome() {
-        assert!(!is_palindrome(list(&[5, 4, 3])));
+        assert!(!Solution::is_palindrome(list(&[5, 4, 3])));
     }
 
     #[test]
     fn empty_list_is_palindrome() {
-        assert!(is_palindrome(None));
+        assert!(Solution::is_palindrome(None));
     }
 }
 */

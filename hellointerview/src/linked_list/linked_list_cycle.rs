@@ -1,35 +1,41 @@
 // https://www.hellointerview.com/learn/code/linked-list/linked-list-cycle
 
-// Each next points to an index in nodes; None marks the end of the list.
 pub struct ListNode {
     pub val: i32,
-    pub next: Option<usize>,
+    pub next: *mut ListNode,
 }
 
-pub fn has_cycle(_nodes: &[ListNode], _head: Option<usize>) -> bool {
-    todo!()
+pub struct Solution;
+
+impl Solution {
+    pub fn has_cycle(_head: *mut ListNode) -> bool {
+        todo!()
+    }
 }
 
 /*
 #[cfg(test)]
 mod tests {
-    use super::{ListNode, has_cycle};
+    use super::{ListNode, Solution};
+    use std::ptr;
 
     #[test]
     fn empty_list_has_no_cycle() {
-        assert!(!has_cycle(&[], None));
+        assert!(!Solution::has_cycle(ptr::null_mut()));
     }
 
     #[test]
     fn single_node_with_cycle() {
-        let nodes = [ListNode { val: 1, next: Some(0) }];
-        assert!(has_cycle(&nodes, Some(0)));
+        let mut node = Box::new(ListNode { val: 1, next: ptr::null_mut() });
+        let head: *mut ListNode = &mut *node;
+        node.next = head;
+        assert!(Solution::has_cycle(head));
     }
 
     #[test]
     fn single_node_without_cycle() {
-        let nodes = [ListNode { val: 1, next: None }];
-        assert!(!has_cycle(&nodes, Some(0)));
+        let mut node = Box::new(ListNode { val: 1, next: ptr::null_mut() });
+        assert!(!Solution::has_cycle(&mut *node));
     }
 }
 */

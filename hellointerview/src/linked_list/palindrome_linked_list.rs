@@ -1,22 +1,22 @@
 // https://www.hellointerview.com/learn/code/linked-list/palindrome-linked-list
 
-use super::Link;
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
 
-pub fn is_palindrome(_head: Link) -> bool {
+pub fn is_palindrome(_head: Option<Box<ListNode>>) -> bool {
     todo!()
 }
 
 /*
 #[cfg(test)]
 mod tests {
-    use super::is_palindrome;
-    use crate::linked_list::{Link, ListNode};
-    use std::cell::RefCell;
-    use std::rc::Rc;
+    use super::{ListNode, is_palindrome};
 
-    fn list(values: &[i32]) -> Link {
+    fn list(values: &[i32]) -> Option<Box<ListNode>> {
         values.iter().rev().fold(None, |next, &val| {
-            Some(Rc::new(RefCell::new(ListNode { val, next })))
+            Some(Box::new(ListNode { val, next }))
         })
     }
 

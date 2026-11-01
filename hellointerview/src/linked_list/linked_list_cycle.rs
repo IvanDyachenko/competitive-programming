@@ -8,6 +8,7 @@ pub struct ListNode {
 pub struct Solution;
 
 impl Solution {
+    #[allow(unsafe_code)]
     pub fn has_cycle(_head: *mut ListNode) -> bool {
         todo!()
     }

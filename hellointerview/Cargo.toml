@@ -8,4 +8,4 @@ publish = false
 [dependencies]
 
 [lints.rust]
-unsafe_code = "forbid"
+unsafe_code = "deny"

@@ -25,17 +25,33 @@ mod tests {
     }
 
     #[test]
-    fn single_node_with_cycle() {
-        let mut node = Box::new(ListNode { val: 1, next: ptr::null_mut() });
-        let head: *mut ListNode = &mut *node;
-        node.next = head;
-        assert!(Solution::has_cycle(head));
+    fn single_node_without_cycle() {
+        let mut node = ListNode { val: 1, next: ptr::null_mut() };
+        assert!(!Solution::has_cycle(&raw mut node));
     }
 
     #[test]
-    fn single_node_without_cycle() {
-        let mut node = Box::new(ListNode { val: 1, next: ptr::null_mut() });
-        assert!(!Solution::has_cycle(&mut *node));
+    fn single_node_with_cycle() {
+        let mut node = ListNode { val: 1, next: ptr::null_mut() };
+        node.next = &raw mut node;
+        assert!(Solution::has_cycle(&raw mut node));
+    }
+
+    #[test]
+    fn multiple_nodes_without_cycle() {
+        let mut third = ListNode { val: 1, next: ptr::null_mut() };
+        let mut second = ListNode { val: 1, next: &raw mut third };
+        let mut first = ListNode { val: 1, next: &raw mut second };
+        assert!(!Solution::has_cycle(&raw mut first));
+    }
+
+    #[test]
+    fn multiple_nodes_with_cycle() {
+        let mut second = ListNode { val: 2, next: ptr::null_mut() };
+        let mut third = ListNode { val: 0, next: &raw mut second };
+        second.next = &raw mut third;
+        let mut first = ListNode { val: 3, next: &raw mut second };
+        assert!(Solution::has_cycle(&raw mut first));
     }
 }
 */

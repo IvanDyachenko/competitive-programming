@@ -38,5 +38,20 @@ mod tests {
     fn empty_list_is_palindrome() {
         assert!(Solution::is_palindrome(None));
     }
+
+    #[test]
+    fn single_node_is_palindrome() {
+        assert!(Solution::is_palindrome(list(&[5])));
+    }
+
+    #[test]
+    fn even_length_palindrome() {
+        assert!(Solution::is_palindrome(list(&[1, 2, 2, 1])));
+    }
+
+    #[test]
+    fn even_length_not_palindrome() {
+        assert!(!Solution::is_palindrome(list(&[1, 2])));
+    }
 }
 */
